@@ -1,0 +1,157 @@
+create database Healing; 
+use Healing;
+
+//회원 테이블
+
+create table family(
+f_nickname varchar(20) primary key,
+f_email varchar(50) unique,
+f_pwd varchar(50) not null,
+f_grade varchar(20) default('family')
+);
+//grade : admin, family, special, vip
+
+insert into family values('관리자','abc@healingroute.com','1234qwer','admin');
+insert into family values('포그바','bbaar@healingroute.com','1234qwer','family');
+insert into family values('데헤아','the@healingroute.com','1234qwer','special');
+insert into family values('에레라','err@healingroute.com','1234qwer','vip');
+insert into family values('메시','asdrf@healingroute.com','1234qwer','family');
+
+//게시판 테이블
+create table healingboard(
+h_num int primary key auto_increment,
+h_title varchar(255) not null,
+h_nickname varchar(20) references family(f_nickname),
+h_date date default(now()),
+h_point int,
+h_recommend int,
+h_locnum int references location(l_num),
+h_image1 varchar(20),
+h_image2 varchar(20),
+h_image3 varchar(20),
+h_image4 varchar(20),
+h_image5 varchar(20), 
+h_link varchar(100),
+h_content varchar(4000)
+);
+
+insert into healingboard values(
+1, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan1.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http://blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
+
+insert into healingboard values(
+2, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han1.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http://sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+
+insert into healingboard values(
+3, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river1.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http://blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
+
+insert into healingboard values(
+4, '서울 신사동 가로수길맛집 새우가 맛있는', '메시', '2017-7-7', 66, 2, 1,
+'garosu1.jpg','garosu2.jpg','garosu3.jpg','garosu4.jpg','','http://blog.naver.com/kami0413/221111319835',
+'안녕하세요 로웰입니다. 오늘은 서울나들이를 다녀왔을때 들렀던가로수길맛집 볼리포인트 후기를 쓰러왔습니다 '); 
+
+insert into healingboard values(
+5, '서울 밤도깨비 야시장 2017,여의도 한강공원', '메시', '2017-9-6', 120, 102, 1,
+'goblin1.jpg', 'goblin2.jpg','goblin3.jpg' ,'' ,'','http://blog.naver.com/qwqw9043/221089732157',
+'지난주 주말, 동주언니랑 여의도 한강공원가서 오랜만에 자전거도 타고 자전거 대여하는곳 근처에
+서울 밤도깨비 야시장(여의동 한강공원)도 있길래 저녁 해결할겸 여의도 한강공원 밤도깨비 야시장에 다녀왔어요' ); 
+
+
+
+//댓글 테이블
+create table reply(
+r_num int primary key auto_increment,
+r_reply varchar(20),
+r_nickname  varchar(20) references family(f_nickname),
+r_date date default(now()),
+r_onum int,
+r_nested int
+);
+
+insert into reply values(
+1,'너무 이뻐요~~~~!!!','포그바','2017-10-16',1,1 
+);
+
+
+//지도위치 테이블
+create table map(
+m_num int primary key auto_increment, 
+m_lat varchar(25),
+m_lng varchar(25),
+m_loc int references location(l_num),
+m_detail varchar(255)
+);
+
+insert into map values(
+1, '37.551169', '126.988173' , 1, '서울특별시 용산구 용산2가동 남산공원길 126'
+);
+
+insert into map values(
+2, '37.525017', '126.939052' , 1, '서울특별시 영등포구 여의도동 여의동로 290'
+); 
+
+insert into map values(
+3, '37.525623', '126.936158' , 1, ' 서울특별시 종로구 상왕십리동 청계천로'
+);
+
+insert into map values(
+4, '37.520617', '127.022938' , 1, '서울특별시 강남구 신사동 545-11'
+);
+
+insert into map values(
+5, '37.531125', '126.928477' , 1, '서울특별시 영등포구 여의도동 여의동로 1-47'
+);
+
+
+//지역명 
+create table location(
+l_num int primary key, 
+l_city varchar(20),
+l_nation varchar(20),
+l_continent varchar(20)
+);
+
+//6대륙( : 아시아 / 오세아니아 / 유럽 / 북아메리카 / 남아메리카 / 아프리카
+insert into location values(1, '서울', '대한민국', '아시아');
+insert into location values(2, '대전', '대한민국', '아시아');
+insert into location values(3, '대구', '대한민국', '아시아');
+insert into location values(4, '부산', '대한민국', '아시아');
+insert into location values(5, '울산', '대한민국', '아시아');
+insert into location values(6, '광주', '대한민국', '아시아');
+insert into location values(7, '인천', '대한민국', '아시아');
+insert into location values(8, '창원', '대한민국', '아시아');
+insert into location values(9, '전주', '대한민국', '아시아');
+insert into location values(10, '청주', '대한민국', '아시아');
+insert into location values(11, '성남', '대한민국', '아시아');
+insert into location values(12, '오사카', '일본', '아시아');
+insert into location values(13, '상하이', '중국', '아시아');
+insert into location values(14, '다낭', '베트남', '아시아');
+insert into location values(15, '홍콩', '홍콩', '아시아');
+insert into location values(16, '방콕', '태국', '아시아');
+insert into location values(17, '런던', '영국', '유럽');
+insert into location values(18, '파리', '프랑스', '유럽');
+insert into location values(19 , '마드리드', '스페인', '유럽');
+insert into location values(20 , '베네치아', '이탈리아', '유럽');
+insert into location values(21 , '뉴욕', '미국', '북아메리카');
+insert into location values(22 , '시카고', '미국', '북아메리카');
+insert into location values(23 , '샌프란시스코', '미국', '북아메리카');
+insert into location values(24 , '밴쿠버', '캐나다', '북아메리카');
+insert into location values(25 , '카사블랑카', '모로코', '아프리카');
+insert into location values(26, '카이로', '이집트', '아프리카');
+insert into location values(27 , '카사블랑카', '모로코', '아프리카');
+insert into location values(28 , '몸바사', '케냐', '아프리카');
+insert into location values(29 , '케이프타운', '남아프리카', '아프리카');
+
+
+create table recommend(
+r_num int primary key,
+r_hbnum int references healingboard(h_num),
+r_nickname varchar(50) references family(f_nickname) on update cascade
+);     
