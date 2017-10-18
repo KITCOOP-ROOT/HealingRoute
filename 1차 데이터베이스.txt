@@ -1,7 +1,7 @@
 create database Healing; 
 use Healing;
 
-//È¸¿ø Å×ÀÌºí
+//íšŒì› í…Œì´ë¸”
 
 create table family(
 f_nickname varchar(20) primary key,
@@ -11,13 +11,13 @@ f_grade varchar(20) default('family')
 );
 //grade : admin, family, special, vip
 
-insert into family values('°ü¸®ÀÚ','abc@healingroute.com','1234qwer','admin');
-insert into family values('Æ÷±×¹Ù','bbaar@healingroute.com','1234qwer','family');
-insert into family values('µ¥Çì¾Æ','the@healingroute.com','1234qwer','special');
-insert into family values('¿¡·¹¶ó','err@healingroute.com','1234qwer','vip');
-insert into family values('¸Þ½Ã','asdrf@healingroute.com','1234qwer','family');
+insert into family values('ê´€ë¦¬ìž','abc@healingroute.com','1234qwer','admin');
+insert into family values('í¬ê·¸ë°”','bbaar@healingroute.com','1234qwer','family');
+insert into family values('ë°í—¤ì•„','the@healingroute.com','1234qwer','special');
+insert into family values('ì—ë ˆë¼','err@healingroute.com','1234qwer','vip');
+insert into family values('ë©”ì‹œ','asdrf@healingroute.com','1234qwer','family');
 
-//°Ô½ÃÆÇ Å×ÀÌºí
+//ê²Œì‹œíŒ í…Œì´ë¸”
 create table healingboard(
 h_num int primary key auto_increment,
 h_title varchar(255) not null,
@@ -36,51 +36,52 @@ h_content varchar(4000)
 );
 
 insert into healingboard values(
-1, '¼­¿ï ³²»êÅ¸¿ö ÄÉÀÌºíÄ« Å¸°í ¼­¿ï¾ß°æ ÇÑ´«¿¡ º¸±â!', 'Æ÷±×¹Ù', '2017-10-15', 5, 22, 1,
+1, 'ì„œìš¸ ë‚¨ì‚°íƒ€ì›Œ ì¼€ì´ë¸”ì¹´ íƒ€ê³  ì„œìš¸ì•¼ê²½ í•œëˆˆì— ë³´ê¸°!', 'í¬ê·¸ë°”', '2017-10-15', 5, 22, 1,
 'Namsan1.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http://blog.naver.com/ssoya3399/221117668557',
-'ÀÌ¹ø¿¡ ³²»êÅ¸¿ö ÄÉÀÌºíÄ« Å¸°í ¼­¿ï¾ß°æ ÇÑ´«¿¡ º¸°í ¿Ô´Âµ¥¿ä
-Á¤¸» Â¯Â¯ÀÌ¾ú¾î¿ä >_< ' ); 
+'ì´ë²ˆì— ë‚¨ì‚°íƒ€ì›Œ ì¼€ì´ë¸”ì¹´ íƒ€ê³  ì„œìš¸ì•¼ê²½ í•œëˆˆì— ë³´ê³  ì™”ëŠ”ë°ìš”
+ì •ë§ ì§±ì§±ì´ì—ˆì–´ìš” >_< ' ); 
 
 insert into healingboard values(
-2, '¼­¿ï¾ß°æ Áñ±â±â', 'µ¥Çì¾Æ', '2016-11-15', 11, 35, 1,
+2, 'ì„œìš¸ì•¼ê²½ ì¦ê¸°ê¸°', 'ë°í—¤ì•„', '2016-11-15', 11, 35, 1,
 'Han1.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http://sinbaram76.blog.me/221115008018',
-'µå·¡°ï½ºÄ«ÀÌÀÔ´Ï´Ù. ¿¬ÈÞÀÇ ¸¶Áö¸·À» ±×³É º¸³»±â ¾Æ½¬¿ö ÇÑ°­¿¡¼­ À¯¶÷¼± ÅÀ½À´Ï´Ù' ); 
+'ë“œëž˜ê³¤ìŠ¤ì¹´ì´ìž…ë‹ˆë‹¤. ì—°íœ´ì˜ ë§ˆì§€ë§‰ì„ ê·¸ëƒ¥ ë³´ë‚´ê¸° ì•„ì‰¬ì›Œ í•œê°•ì—ì„œ ìœ ëžŒì„  íƒ”ìŠµë‹ˆë‹¤' ); 
 
 
 insert into healingboard values(
-3, '¼­¿ï Ã»°èÃµ ¼­¿ï·Î 7017 °­¾ÆÁö°¡´É', '¿¡·¹¶ó', '2017-10-10', 20, 44, 1,
+3, 'ì„œìš¸ ì²­ê³„ì²œ ì„œìš¸ë¡œ 7017 ê°•ì•„ì§€ê°€ëŠ¥', 'ì—ë ˆë¼', '2017-10-10', 20, 44, 1,
 'river1.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http://blog.naver.com/lowell__93/221114098442',
-'¿À´ÃÀº Ãß¼®¿¬ÈÞ °¡º¼¸¸ÇÑ°÷À¸·Î Ã»°èÃµ ¼­¿ï·Î 7017À» º¸¿©µå¸±²¾¿ä!!' ); 
+'ì˜¤ëŠ˜ì€ ì¶”ì„ì—°íœ´ ê°€ë³¼ë§Œí•œê³³ìœ¼ë¡œ ì²­ê³„ì²œ ì„œìš¸ë¡œ 7017ì„ ë³´ì—¬ë“œë¦´ê¼ìš”!!' ); 
 
 insert into healingboard values(
-4, '¼­¿ï ½Å»çµ¿ °¡·Î¼ö±æ¸ÀÁý »õ¿ì°¡ ¸ÀÀÖ´Â', '¸Þ½Ã', '2017-7-7', 66, 2, 1,
+4, 'ì„œìš¸ ì‹ ì‚¬ë™ ê°€ë¡œìˆ˜ê¸¸ë§›ì§‘ ìƒˆìš°ê°€ ë§›ìžˆëŠ”', 'ë©”ì‹œ', '2017-7-7', 66, 2, 1,
 'garosu1.jpg','garosu2.jpg','garosu3.jpg','garosu4.jpg','','http://blog.naver.com/kami0413/221111319835',
-'¾È³çÇÏ¼¼¿ä ·ÎÀ£ÀÔ´Ï´Ù. ¿À´ÃÀº ¼­¿ï³ªµéÀÌ¸¦ ´Ù³à¿ÔÀ»¶§ µé·¶´ø°¡·Î¼ö±æ¸ÀÁý º¼¸®Æ÷ÀÎÆ® ÈÄ±â¸¦ ¾²·¯¿Ô½À´Ï´Ù '); 
+'ì•ˆë…•í•˜ì„¸ìš” ë¡œì›°ìž…ë‹ˆë‹¤. ì˜¤ëŠ˜ì€ ì„œìš¸ë‚˜ë“¤ì´ë¥¼ ë‹¤ë…€ì™”ì„ë•Œ ë“¤ë €ë˜ê°€ë¡œìˆ˜ê¸¸ë§›ì§‘ ë³¼ë¦¬í¬ì¸íŠ¸ í›„ê¸°ë¥¼ ì“°ëŸ¬ì™”ìŠµë‹ˆë‹¤ '); 
 
 insert into healingboard values(
-5, '¼­¿ï ¹ãµµ±úºñ ¾ß½ÃÀå 2017,¿©ÀÇµµ ÇÑ°­°ø¿ø', '¸Þ½Ã', '2017-9-6', 120, 102, 1,
+5, 'ì„œìš¸ ë°¤ë„ê¹¨ë¹„ ì•¼ì‹œìž¥ 2017,ì—¬ì˜ë„ í•œê°•ê³µì›', 'ë©”ì‹œ', '2017-9-6', 120, 102, 1,
 'goblin1.jpg', 'goblin2.jpg','goblin3.jpg' ,'' ,'','http://blog.naver.com/qwqw9043/221089732157',
-'Áö³­ÁÖ ÁÖ¸», µ¿ÁÖ¾ð´Ï¶û ¿©ÀÇµµ ÇÑ°­°ø¿ø°¡¼­ ¿À·£¸¸¿¡ ÀÚÀü°Åµµ Å¸°í ÀÚÀü°Å ´ë¿©ÇÏ´Â°÷ ±ÙÃ³¿¡
-¼­¿ï ¹ãµµ±úºñ ¾ß½ÃÀå(¿©ÀÇµ¿ ÇÑ°­°ø¿ø)µµ ÀÖ±æ·¡ Àú³á ÇØ°áÇÒ°â ¿©ÀÇµµ ÇÑ°­°ø¿ø ¹ãµµ±úºñ ¾ß½ÃÀå¿¡ ´Ù³à¿Ô¾î¿ä' ); 
+'ì§€ë‚œì£¼ ì£¼ë§, ë™ì£¼ì–¸ë‹ˆëž‘ ì—¬ì˜ë„ í•œê°•ê³µì›ê°€ì„œ ì˜¤ëžœë§Œì— ìžì „ê±°ë„ íƒ€ê³  ìžì „ê±° ëŒ€ì—¬í•˜ëŠ”ê³³ ê·¼ì²˜ì—
+ì„œìš¸ ë°¤ë„ê¹¨ë¹„ ì•¼ì‹œìž¥(ì—¬ì˜ë™ í•œê°•ê³µì›)ë„ ìžˆê¸¸ëž˜ ì €ë… í•´ê²°í• ê²¸ ì—¬ì˜ë„ í•œê°•ê³µì› ë°¤ë„ê¹¨ë¹„ ì•¼ì‹œìž¥ì— ë‹¤ë…€ì™”ì–´ìš”' ); 
 
 
 
-//´ñ±Û Å×ÀÌºí
+//ëŒ“ê¸€ í…Œì´ë¸”
 create table reply(
 r_num int primary key auto_increment,
 r_reply varchar(20),
 r_nickname  varchar(20) references family(f_nickname),
 r_date date default(now()),
+r_hbnum int references healingboard(h_num),
 r_onum int,
 r_nested int
 );
 
 insert into reply values(
-1,'³Ê¹« ÀÌ»µ¿ä~~~~!!!','Æ÷±×¹Ù','2017-10-16',1,1 
+1,'ë„ˆë¬´ ì´ë»ìš”~~~~!!!','í¬ê·¸ë°”','2017-10-16',1,1,1 
 );
 
 
-//ÁöµµÀ§Ä¡ Å×ÀÌºí
+//ì§€ë„ìœ„ì¹˜ í…Œì´ë¸”
 create table map(
 m_num int primary key auto_increment, 
 m_lat varchar(25),
@@ -90,27 +91,27 @@ m_detail varchar(255)
 );
 
 insert into map values(
-1, '37.551169', '126.988173' , 1, '¼­¿ïÆ¯º°½Ã ¿ë»ê±¸ ¿ë»ê2°¡µ¿ ³²»ê°ø¿ø±æ 126'
+1, '37.551169', '126.988173' , 1, 'ì„œìš¸íŠ¹ë³„ì‹œ ìš©ì‚°êµ¬ ìš©ì‚°2ê°€ë™ ë‚¨ì‚°ê³µì›ê¸¸ 126'
 );
 
 insert into map values(
-2, '37.525017', '126.939052' , 1, '¼­¿ïÆ¯º°½Ã ¿µµîÆ÷±¸ ¿©ÀÇµµµ¿ ¿©ÀÇµ¿·Î 290'
+2, '37.525017', '126.939052' , 1, 'ì„œìš¸íŠ¹ë³„ì‹œ ì˜ë“±í¬êµ¬ ì—¬ì˜ë„ë™ ì—¬ì˜ë™ë¡œ 290'
 ); 
 
 insert into map values(
-3, '37.525623', '126.936158' , 1, ' ¼­¿ïÆ¯º°½Ã Á¾·Î±¸ »ó¿Õ½Ê¸®µ¿ Ã»°èÃµ·Î'
+3, '37.525623', '126.936158' , 1, ' ì„œìš¸íŠ¹ë³„ì‹œ ì¢…ë¡œêµ¬ ìƒì™•ì‹­ë¦¬ë™ ì²­ê³„ì²œë¡œ'
 );
 
 insert into map values(
-4, '37.520617', '127.022938' , 1, '¼­¿ïÆ¯º°½Ã °­³²±¸ ½Å»çµ¿ 545-11'
+4, '37.520617', '127.022938' , 1, 'ì„œìš¸íŠ¹ë³„ì‹œ ê°•ë‚¨êµ¬ ì‹ ì‚¬ë™ 545-11'
 );
 
 insert into map values(
-5, '37.531125', '126.928477' , 1, '¼­¿ïÆ¯º°½Ã ¿µµîÆ÷±¸ ¿©ÀÇµµµ¿ ¿©ÀÇµ¿·Î 1-47'
+5, '37.531125', '126.928477' , 1, 'ì„œìš¸íŠ¹ë³„ì‹œ ì˜ë“±í¬êµ¬ ì—¬ì˜ë„ë™ ì—¬ì˜ë™ë¡œ 1-47'
 );
 
 
-//Áö¿ª¸í 
+//ì§€ì—­ëª… 
 create table location(
 l_num int primary key, 
 l_city varchar(20),
@@ -118,36 +119,36 @@ l_nation varchar(20),
 l_continent varchar(20)
 );
 
-//6´ë·ú( : ¾Æ½Ã¾Æ / ¿À¼¼¾Æ´Ï¾Æ / À¯·´ / ºÏ¾Æ¸Þ¸®Ä« / ³²¾Æ¸Þ¸®Ä« / ¾ÆÇÁ¸®Ä«
-insert into location values(1, '¼­¿ï', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(2, '´ëÀü', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(3, '´ë±¸', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(4, 'ºÎ»ê', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(5, '¿ï»ê', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(6, '±¤ÁÖ', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(7, 'ÀÎÃµ', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(8, 'Ã¢¿ø', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(9, 'ÀüÁÖ', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(10, 'Ã»ÁÖ', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(11, '¼º³²', '´ëÇÑ¹Î±¹', '¾Æ½Ã¾Æ');
-insert into location values(12, '¿À»çÄ«', 'ÀÏº»', '¾Æ½Ã¾Æ');
-insert into location values(13, '»óÇÏÀÌ', 'Áß±¹', '¾Æ½Ã¾Æ');
-insert into location values(14, '´Ù³¶', 'º£Æ®³²', '¾Æ½Ã¾Æ');
-insert into location values(15, 'È«Äá', 'È«Äá', '¾Æ½Ã¾Æ');
-insert into location values(16, '¹æÄÛ', 'ÅÂ±¹', '¾Æ½Ã¾Æ');
-insert into location values(17, '·±´ø', '¿µ±¹', 'À¯·´');
-insert into location values(18, 'ÆÄ¸®', 'ÇÁ¶û½º', 'À¯·´');
-insert into location values(19 , '¸¶µå¸®µå', '½ºÆäÀÎ', 'À¯·´');
-insert into location values(20 , 'º£³×Ä¡¾Æ', 'ÀÌÅ»¸®¾Æ', 'À¯·´');
-insert into location values(21 , '´º¿å', '¹Ì±¹', 'ºÏ¾Æ¸Þ¸®Ä«');
-insert into location values(22 , '½ÃÄ«°í', '¹Ì±¹', 'ºÏ¾Æ¸Þ¸®Ä«');
-insert into location values(23 , '»÷ÇÁ¶õ½Ã½ºÄÚ', '¹Ì±¹', 'ºÏ¾Æ¸Þ¸®Ä«');
-insert into location values(24 , '¹êÄí¹ö', 'Ä³³ª´Ù', 'ºÏ¾Æ¸Þ¸®Ä«');
-insert into location values(25 , 'Ä«»çºí¶ûÄ«', '¸ð·ÎÄÚ', '¾ÆÇÁ¸®Ä«');
-insert into location values(26, 'Ä«ÀÌ·Î', 'ÀÌÁýÆ®', '¾ÆÇÁ¸®Ä«');
-insert into location values(27 , 'Ä«»çºí¶ûÄ«', '¸ð·ÎÄÚ', '¾ÆÇÁ¸®Ä«');
-insert into location values(28 , '¸ö¹Ù»ç', 'ÄÉ³Ä', '¾ÆÇÁ¸®Ä«');
-insert into location values(29 , 'ÄÉÀÌÇÁÅ¸¿î', '³²¾ÆÇÁ¸®Ä«', '¾ÆÇÁ¸®Ä«');
+//6ëŒ€ë¥™( : ì•„ì‹œì•„ / ì˜¤ì„¸ì•„ë‹ˆì•„ / ìœ ëŸ½ / ë¶ì•„ë©”ë¦¬ì¹´ / ë‚¨ì•„ë©”ë¦¬ì¹´ / ì•„í”„ë¦¬ì¹´
+insert into location values(1, 'ì„œìš¸', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(2, 'ëŒ€ì „', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(3, 'ëŒ€êµ¬', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(4, 'ë¶€ì‚°', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(5, 'ìš¸ì‚°', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(6, 'ê´‘ì£¼', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(7, 'ì¸ì²œ', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(8, 'ì°½ì›', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(9, 'ì „ì£¼', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(10, 'ì²­ì£¼', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(11, 'ì„±ë‚¨', 'ëŒ€í•œë¯¼êµ­', 'ì•„ì‹œì•„');
+insert into location values(12, 'ì˜¤ì‚¬ì¹´', 'ì¼ë³¸', 'ì•„ì‹œì•„');
+insert into location values(13, 'ìƒí•˜ì´', 'ì¤‘êµ­', 'ì•„ì‹œì•„');
+insert into location values(14, 'ë‹¤ë‚­', 'ë² íŠ¸ë‚¨', 'ì•„ì‹œì•„');
+insert into location values(15, 'í™ì½©', 'í™ì½©', 'ì•„ì‹œì•„');
+insert into location values(16, 'ë°©ì½•', 'íƒœêµ­', 'ì•„ì‹œì•„');
+insert into location values(17, 'ëŸ°ë˜', 'ì˜êµ­', 'ìœ ëŸ½');
+insert into location values(18, 'íŒŒë¦¬', 'í”„ëž‘ìŠ¤', 'ìœ ëŸ½');
+insert into location values(19 , 'ë§ˆë“œë¦¬ë“œ', 'ìŠ¤íŽ˜ì¸', 'ìœ ëŸ½');
+insert into location values(20 , 'ë² ë„¤ì¹˜ì•„', 'ì´íƒˆë¦¬ì•„', 'ìœ ëŸ½');
+insert into location values(21 , 'ë‰´ìš•', 'ë¯¸êµ­', 'ë¶ì•„ë©”ë¦¬ì¹´');
+insert into location values(22 , 'ì‹œì¹´ê³ ', 'ë¯¸êµ­', 'ë¶ì•„ë©”ë¦¬ì¹´');
+insert into location values(23 , 'ìƒŒí”„ëž€ì‹œìŠ¤ì½”', 'ë¯¸êµ­', 'ë¶ì•„ë©”ë¦¬ì¹´');
+insert into location values(24 , 'ë°´ì¿ ë²„', 'ìºë‚˜ë‹¤', 'ë¶ì•„ë©”ë¦¬ì¹´');
+insert into location values(25 , 'ì¹´ì‚¬ë¸”ëž‘ì¹´', 'ëª¨ë¡œì½”', 'ì•„í”„ë¦¬ì¹´');
+insert into location values(26, 'ì¹´ì´ë¡œ', 'ì´ì§‘íŠ¸', 'ì•„í”„ë¦¬ì¹´');
+insert into location values(27 , 'ì¹´ì‚¬ë¸”ëž‘ì¹´', 'ëª¨ë¡œì½”', 'ì•„í”„ë¦¬ì¹´');
+insert into location values(28 , 'ëª¸ë°”ì‚¬', 'ì¼€ëƒ', 'ì•„í”„ë¦¬ì¹´');
+insert into location values(29 , 'ì¼€ì´í”„íƒ€ìš´', 'ë‚¨ì•„í”„ë¦¬ì¹´', 'ì•„í”„ë¦¬ì¹´');
 
 
 create table recommend(
