@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<a href="sawonlist">asd</a>
+	<a href="sawonlist">혼자 연습</a>
 
 </body>
 </html>
