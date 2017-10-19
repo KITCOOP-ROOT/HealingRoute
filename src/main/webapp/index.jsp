@@ -7,9 +7,13 @@
 <title>문제)직원자료 출력(web MVC + MyBatis)-부서별,이름별(asc) 정렬되어 출력</title>
 </head>
 <body>
+<<<<<<< HEAD
 
 	<a href="sawonlist">혼자 연습</a>
 	<a href="sawonlist">머냐s2</a>
 
+=======
+	<a href="sawonlist">혼자 연습2</a>
+>>>>>>> refs/heads/seungil
 </body>
 </html>
