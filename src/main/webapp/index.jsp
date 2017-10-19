@@ -7,6 +7,9 @@
 <title>문제)직원자료 출력(web MVC + MyBatis)-부서별,이름별(asc) 정렬되어 출력</title>
 </head>
 <body>
+
 	<a href="sawonlist">테스트ss</a>
+	<a href="sawonlist">테스트ss</a>
+
 </body>
 </html>
