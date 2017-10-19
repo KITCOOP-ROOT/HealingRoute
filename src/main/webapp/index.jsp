@@ -9,7 +9,7 @@
 <body>
 
 	<a href="sawonlist">혼자 연습</a>
-	<a href="sawonlist">머냐s</a>
+	<a href="sawonlist">머냐s2</a>
 
 </body>
 </html>
