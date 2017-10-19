@@ -8,7 +8,8 @@
 </head>
 <body>
 	
-	<a href="sawonlist">라스트 테스트</a>
+	<a href="sawonlist">테스트ss</a>
+	<a href="sawonlist">테스트ss</a>
 	아 진짜 미치겟다
 </body>
 </html>
