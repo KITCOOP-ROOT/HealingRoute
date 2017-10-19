@@ -10,6 +10,6 @@
 	
 	<a href="sawonlist">테스트ss</a>
 	<a href="sawonlist">테스트ss</a>
-	아 진짜 미치겟다sa
+	
 </body>
 </html>
