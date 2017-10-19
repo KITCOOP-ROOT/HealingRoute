@@ -9,6 +9,6 @@
 <body>
 <a href="sawonlist">테스트ss222</a>
 	<a href="sawonlist">라스트 테스트</a>
-	아 진짜 미치겟다ss
+	
 </body>
 </html>
