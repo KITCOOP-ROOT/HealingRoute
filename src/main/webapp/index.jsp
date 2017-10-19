@@ -8,11 +8,8 @@
 </head>
 <body>
 
-asdfasdkfjaskdfnqalwkjhrqwkdmnasfkl;dnf
 	<a href="sawonlist">테스트ss</a>
-hgd
-asdkofaslkdnfasdlknfasdlnfksaf
-asdflknsdfaslf
-asdfnlasdfnlkasdfnl
+	<a href="sawonlist">테스트ss</a>
+	<a href="sawonlist">테스트ss</a>
 </body>
 </html>
