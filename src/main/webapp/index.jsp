@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<a href="sawonlist">혼자 연습2ss</a>
-	<a href="sawonlist">머냐s2</a>
+	<a href="sawonlist">테스트</a>
+
 </body>
 </html>
