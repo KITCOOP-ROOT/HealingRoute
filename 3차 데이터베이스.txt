@@ -149,7 +149,11 @@ insert into location values(26, '카이로', '이집트', '아프리카');
 insert into location values(27 , '카사블랑카', '모로코', '아프리카');
 insert into location values(28 , '몸바사', '케냐', '아프리카');
 insert into location values(29 , '케이프타운', '남아프리카', '아프리카');
-
+insert into location values(30, '상파울루', '브라질', '남아메리카');
+insert into location values(31, '리우데자네이루', '브라질', '남아메리카');
+insert into location values(32, '부에노스아이레스', '아르헨티나', '남아메리카');
+insert into location values(33, '멕시코시티', '멕시코', '남아메리카');
+insert into location values(34, '칸쿤', '멕시코', '남아메리카');
 
 create table recommend(
 r_num int primary key,
