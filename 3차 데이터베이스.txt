@@ -26,13 +26,13 @@ b_date date default(now()),
 b_point int default(0),
 b_recommend int default(0),
 b_locnum int references location(l_num),
-h_image1 varchar(20) default('board.jpg'),
-h_image2 varchar(20),
-h_image3 varchar(20),
-h_image4 varchar(20),
-h_image5 varchar(20), 
-h_link varchar(100),
-h_content varchar(4000)
+b_image1 varchar(20) default('board.jpg'),
+b_image2 varchar(20),
+b_image3 varchar(20),
+b_image4 varchar(20),
+b_image5 varchar(20), 
+b_link varchar(100),
+b_content varchar(4000)
 );
 
 insert into board values(

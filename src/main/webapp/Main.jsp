@@ -13,6 +13,7 @@
 <div class="div">
 <c:import url="top.jsp"/>
 --메인--
+<a href="showBoard">힐링보드 테스트</a>
 <a href="list">ss</a>
 <table>
 	<tr>
