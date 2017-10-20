@@ -23,9 +23,10 @@
 		<property name="dataSource" ref="dds"/>
 	</bean>
 	<!-- 어노테이션 쿼리문  처리 -->
+	<!--  
 	<bean class="org.mybatis.spring.mapper.MapperFactoryBean" >
 		<property name="mapperInterface" value="com.root.healing.model.SawonInter"/>
 		<property name="sqlSessionFactory" ref="sqlSessionFactoryBean"/>
 	</bean>
-	
+	-->
 </beans>
