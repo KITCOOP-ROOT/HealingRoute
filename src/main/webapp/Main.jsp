@@ -15,14 +15,6 @@
 --메인--
 <a href="showBoard">힐링보드 테스트</a>
 <a href="list">ss</a>
-<table>
-	<tr>
-		<td><a href="list">ss</a></td>
-		<td><a href="list">ss</a></td>
-		<td><a href="list">ss</a></td>
-		<td><a href="list">ss</a></td>
-	</tr>
-</table>
 </div>
 </body>
 </html>
