@@ -7,26 +7,27 @@ create table family(
 f_nickname varchar(20) primary key,
 f_email varchar(50) unique,
 f_pwd varchar(50) not null,
-f_grade varchar(20) default('family')
+f_grade varchar(20) default('family'),
+f_image varchar(20) default('family.jpg')
 );
 //grade : admin, family, special, vip
 
-insert into family values('관리자','abc@healingroute.com','1234qwer','admin');
-insert into family values('포그바','bbaar@healingroute.com','1234qwer','family');
-insert into family values('데헤아','the@healingroute.com','1234qwer','special');
-insert into family values('에레라','err@healingroute.com','1234qwer','vip');
-insert into family values('메시','asdrf@healingroute.com','1234qwer','family');
+insert into family values('관리자','abc@healingroute.com','1234qwer','admin','family.jpg');
+insert into family values('포그바','bbaar@healingroute.com','1234qwer','family','family.jpg');
+insert into family values('데헤아','the@healingroute.com','1234qwer','special','family.jpg');
+insert into family values('에레라','err@healingroute.com','1234qwer','vip','family.jpg');
+insert into family values('메시','asdrf@healingroute.com','1234qwer','family','family.jpg');
 
 //게시판 테이블
-create table healingboard(
-h_num int primary key auto_increment,
-h_title varchar(255) not null,
-h_nickname varchar(20) references family(f_nickname),
-h_date date default(now()),
-h_point int,
-h_recommend int,
-h_locnum int references location(l_num),
-h_image1 varchar(20),
+create table board(
+b_num int primary key auto_increment,
+b_title varchar(255) not null,
+b_nickname varchar(20) references family(f_nickname),
+b_date date default(now()),
+b_point int default(0),
+b_recommend int default(0),
+b_locnum int references location(l_num),
+h_image1 varchar(20) default('board.jpg'),
 h_image2 varchar(20),
 h_image3 varchar(20),
 h_image4 varchar(20),
@@ -66,20 +67,19 @@ insert into healingboard values(
 
 
 //댓글 테이블
-create table reply(
-r_num int primary key auto_increment,
-r_reply varchar(20),
-r_nickname  varchar(20) references family(f_nickname),
-r_date date default(now()),
-r_hbnum int references healingboard(h_num),
-r_onum int,
-r_nested int
+create table comment(
+c_num int primary key auto_increment,
+c_content varchar(255) not null,
+c_nickname  varchar(20) references family(f_nickname),
+c_date date default(now()),
+c_bnum int references board(b_num),
+c_onum int,
+c_nested int
 );
 
 insert into reply values(
 1,'너무 이뻐요~~~~!!!','포그바','2017-10-16',1,1,1 
 );
-
 
 //지도위치 테이블
 create table map(
@@ -87,7 +87,7 @@ m_num int primary key auto_increment,
 m_lat varchar(25),
 m_lng varchar(25),
 m_loc int references location(l_num),
-m_detail varchar(255)
+m_addr varchar(255)
 );
 
 insert into map values(
@@ -153,6 +153,6 @@ insert into location values(29 , '케이프타운', '남아프리카', '아프�
 
 create table recommend(
 r_num int primary key,
-r_hbnum int references healingboard(h_num),
+r_bnum int references board(b_num),
 r_nickname varchar(50) references family(f_nickname) on update cascade
 );     
