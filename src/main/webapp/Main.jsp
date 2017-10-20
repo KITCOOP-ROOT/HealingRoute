@@ -17,9 +17,6 @@
 <table>
 	<tr>
 		<td><a href="list">ss</a></td>
-		<td><a href="list">ss</a></td>
-		<td><a href="list">ss</a></td>
-		<td><a href="list">ss</a></td>
 	</tr>
 </table>
 </div>

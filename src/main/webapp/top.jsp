@@ -60,8 +60,10 @@
 											</td>
 											<!-- 로그인/회원가입 부분 -->
 											<td nowrap>
+											<div id="member">
 												<span><%=log%></span>&nbsp; 
 												<span><%=mem1%></span>
+											</div>
 											</td>
 										</tr>
 									</table>
@@ -70,18 +72,18 @@
 					</td>
 					<td class="right">
 						<!-- 메뉴바 부분 -->
+						<div class="jaybar-bar">
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse"
-							data-target="#bs-example-navbar-collapse-1">
+							data-target="#member">
 							<span class="icon-bar"></span> 
 							<span class="icon-bar"></span> 
 							<span class="icon-bar"></span>
 						</button>
+						</div>
 					</td>
-
 				</tr>
 			</table>
-
 		</nav>
 	</div>
 	<br>
