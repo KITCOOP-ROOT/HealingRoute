@@ -41,25 +41,27 @@
 			<table>
 				<tr>
 					<td class="top_menu_left">
+						<!-- 로고 부분 -->
 						<div class="navbar-header">
-							<a href="#"><img src="./resources/image/logo_small.png"
-								class="apple"></a>
+							<a href="#"><img src="./resources/image/logo_small.png" class="apple"></a>
 						</div>
 					</td>
 					<td style="text-align: right;">
-						<div class="collapse navbar-collapse 100"
-							id="bs-example-navbar-collapse-1">
+						<div class="collapse navbar-collapse 100" id="bs-example-navbar-collapse-1">
 							<div class="form-group 100">
 									<table class="100">
 										<tr>
 											<td>
+											<!-- 검색기능 부분 -->
 											<form class="navbar-form navbar-left 100" role="search" >
 											<input type="text" class="form-control input"
 												placeholder="Search" size="90%" name="search"> <!-- <button type="submit" class="btn btn-default">검색</button> -->
 											</form>
 											</td>
+											<!-- 로그인/회원가입 부분 -->
 											<td nowrap>
-												<span><%=log%></span>&nbsp; <span><%=mem1%></span>
+												<span><%=log%></span>&nbsp; 
+												<span><%=mem1%></span>
 											</td>
 										</tr>
 									</table>
@@ -67,6 +69,7 @@
 						</div>
 					</td>
 					<td class="right">
+						<!-- 메뉴바 부분 -->
 						<button type="button" class="navbar-toggle collapsed"
 							data-toggle="collapse"
 							data-target="#bs-example-navbar-collapse-1">
@@ -81,7 +84,10 @@
 
 		</nav>
 	</div>
-<br><br><br><br>
+	<br>
+	<br>
+	<br>
+	<br>
 
 </body>
 </html>
