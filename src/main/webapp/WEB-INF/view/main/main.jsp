@@ -10,24 +10,37 @@
 <script src="./resources/js/skel.min.js"></script>
 <script src="./resources/js/util.js"></script>
 <script src="./resources/js/main.js"></script>
-<title>Insert title here</title>
+<title>힐링루트 지도검색 결과</title>
+    <style>
+      #map {
+        height: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
 </head>
 <body>
 	<!-- Header -->  
- 	<header id="header">
+<!-- 	<header id="header">
 		<div class="inner">
 			<div class="content">
-				<h1>Radius</h1>
+				<h1>제목</h1>
 				<h2>
-					여기에 검색창 넣어야 하나? <br />
+					여기에 검색창 넣어야 하나? 넣지말자<br />
 				</h2>
 				<a href="#" class="button big alt"><span>Let's Go</span></a>
 			</div>
 			<a href="#" class="button hidden"><span>Let's Go</span></a>
 		</div>
-	</header>  
+	</header> -->
 	<!-- main1(지도) -->  
-
+	<div class= "main-map">
+		<c:import url="test.jsp" />
+		<c:import url="map.jsp" />
+	</div>
 	<!-- main2(board)-->  
 	<div id="main">
 		<div class="inner">
@@ -62,9 +75,9 @@
 					<li><a href="#" class="icon fa-dribbble"><span
 							class="label">Dribbble</span></a></li>
 				</ul>
-				&copy; KICCampus 2017.
+				&copy; KIC Campus 2017.
 			</div>
 		</div>
-	</footer> 
+	</footer>
 </body>
 </html>
