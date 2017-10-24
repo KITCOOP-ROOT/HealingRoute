@@ -37,11 +37,11 @@
 		</div>
 	</header> -->
 	<!-- main1(지도) -->  
-<%-- 	<div class= "main-map">
+	<div class= "main-map">
 		<c:import url="test.jsp" />
 		<c:import url="map.jsp" />
 	</div>
- --%>	<!-- main2(board)-->  
+	<!-- main2(board)-->  
 	<div id="main">
 		<div class="inner">
 			<div class="columns"  id="columns">
