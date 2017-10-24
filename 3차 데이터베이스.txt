@@ -46,7 +46,6 @@ insert into board values(
 'Han1.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
 '드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
 
-
 insert into board values(
 3, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
 'river1.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
@@ -63,7 +62,215 @@ insert into board values(
 '지난주 주말, 동주언니랑 여의도 한강공원가서 오랜만에 자전거도 타고 자전거 대여하는곳 근처에
 서울 밤도깨비 야시장(여의동 한강공원)도 있길래 저녁 해결할겸 여의도 한강공원 밤도깨비 야시장에 다녀왔어요' ); 
 
+//테스트 위해 추가함 
+insert into board values(
+6, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan2.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:--blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
 
+insert into board values(
+7, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han2.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+insert into board values(
+8, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river2.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
+
+insert into board values(
+9, '서울 신사동 가로수길맛집 새우가 맛있는', '메시', '2017-7-7', 66, 2, 1,
+'garosu2.jpg','garosu2.jpg','garosu3.jpg','garosu4.jpg','','http:--blog.naver.com/kami0413/221111319835',
+'안녕하세요 로웰입니다. 오늘은 서울나들이를 다녀왔을때 들렀던가로수길맛집 볼리포인트 후기를 쓰러왔습니다 '); 
+
+insert into board values(
+10, '서울 밤도깨비 야시장 2017,여의도 한강공원', '메시', '2017-9-6', 120, 102, 1,
+'goblin2.jpg', 'goblin2.jpg','goblin3.jpg' ,'' ,'','http:--blog.naver.com/qwqw9043/221089732157',
+'지난주 주말, 동주언니랑 여의도 한강공원가서 오랜만에 자전거도 타고 자전거 대여하는곳 근처에
+서울 밤도깨비 야시장(여의동 한강공원)도 있길래 저녁 해결할겸 여의도 한강공원 밤도깨비 야시장에 다녀왔어요' ); 
+
+insert into board values(
+11, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan2.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:--blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
+
+insert into board values(
+12, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han3.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+insert into board values(
+13, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river3.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
+
+insert into board values(
+14, '서울 신사동 가로수길맛집 새우가 맛있는', '메시', '2017-7-7', 66, 2, 1,
+'garosu3.jpg','garosu2.jpg','garosu3.jpg','garosu4.jpg','','http:--blog.naver.com/kami0413/221111319835',
+'안녕하세요 로웰입니다. 오늘은 서울나들이를 다녀왔을때 들렀던가로수길맛집 볼리포인트 후기를 쓰러왔습니다 '); 
+
+insert into board values(
+15, '서울 밤도깨비 야시장 2017,여의도 한강공원', '메시', '2017-9-6', 120, 102, 1,
+'goblin3.jpg', 'goblin2.jpg','goblin3.jpg' ,'' ,'','http:--blog.naver.com/qwqw9043/221089732157',
+'지난주 주말, 동주언니랑 여의도 한강공원가서 오랜만에 자전거도 타고 자전거 대여하는곳 근처에
+서울 밤도깨비 야시장(여의동 한강공원)도 있길래 저녁 해결할겸 여의도 한강공원 밤도깨비 야시장에 다녀왔어요' ); 
+
+insert into board values(
+16, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan4.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:--blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
+
+insert into board values(
+17, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han4.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+insert into board values(
+18, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river4.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
+
+insert into board values(
+19, '서울 신사동 가로수길맛집 새우가 맛있는', '메시', '2017-7-7', 66, 2, 1,
+'garosu4.jpg','garosu2.jpg','garosu3.jpg','garosu4.jpg','','http:--blog.naver.com/kami0413/221111319835',
+'안녕하세요 로웰입니다. 오늘은 서울나들이를 다녀왔을때 들렀던가로수길맛집 볼리포인트 후기를 쓰러왔습니다 '); 
+
+insert into board values(
+20, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan5.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:--blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
+
+insert into board values(
+21, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han5.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+insert into board values(
+22, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river5.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
+
+insert into board values(
+31, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan1.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:--blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
+
+insert into board values(
+32, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han1.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+insert into board values(
+33, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river1.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
+
+insert into board values(
+34, '서울 신사동 가로수길맛집 새우가 맛있는', '메시', '2017-7-7', 66, 2, 1,
+'garosu1.jpg','garosu2.jpg','garosu3.jpg','garosu4.jpg','','http:--blog.naver.com/kami0413/221111319835',
+'안녕하세요 로웰입니다. 오늘은 서울나들이를 다녀왔을때 들렀던가로수길맛집 볼리포인트 후기를 쓰러왔습니다 '); 
+
+insert into board values(
+35, '서울 밤도깨비 야시장 2017,여의도 한강공원', '메시', '2017-9-6', 120, 102, 1,
+'goblin1.jpg', 'goblin2.jpg','goblin3.jpg' ,'' ,'','http:--blog.naver.com/qwqw9043/221089732157',
+'지난주 주말, 동주언니랑 여의도 한강공원가서 오랜만에 자전거도 타고 자전거 대여하는곳 근처에
+서울 밤도깨비 야시장(여의동 한강공원)도 있길래 저녁 해결할겸 여의도 한강공원 밤도깨비 야시장에 다녀왔어요' ); 
+
+insert into board values(
+36, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan2.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:--blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
+
+insert into board values(
+37, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han2.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+insert into board values(
+38, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river2.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
+
+insert into board values(
+39, '서울 신사동 가로수길맛집 새우가 맛있는', '메시', '2017-7-7', 66, 2, 1,
+'garosu2.jpg','garosu2.jpg','garosu3.jpg','garosu4.jpg','','http:--blog.naver.com/kami0413/221111319835',
+'안녕하세요 로웰입니다. 오늘은 서울나들이를 다녀왔을때 들렀던가로수길맛집 볼리포인트 후기를 쓰러왔습니다 '); 
+
+insert into board values(
+40, '서울 밤도깨비 야시장 2017,여의도 한강공원', '메시', '2017-9-6', 120, 102, 1,
+'goblin2.jpg', 'goblin2.jpg','goblin3.jpg' ,'' ,'','http:--blog.naver.com/qwqw9043/221089732157',
+'지난주 주말, 동주언니랑 여의도 한강공원가서 오랜만에 자전거도 타고 자전거 대여하는곳 근처에
+서울 밤도깨비 야시장(여의동 한강공원)도 있길래 저녁 해결할겸 여의도 한강공원 밤도깨비 야시장에 다녀왔어요' ); 
+
+insert into board values(
+41, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan2.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:--blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
+
+insert into board values(
+42, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han3.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+insert into board values(
+43, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river3.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
+
+insert into board values(
+44, '서울 신사동 가로수길맛집 새우가 맛있는', '메시', '2017-7-7', 66, 2, 1,
+'garosu3.jpg','garosu2.jpg','garosu3.jpg','garosu4.jpg','','http:--blog.naver.com/kami0413/221111319835',
+'안녕하세요 로웰입니다. 오늘은 서울나들이를 다녀왔을때 들렀던가로수길맛집 볼리포인트 후기를 쓰러왔습니다 '); 
+
+insert into board values(
+45, '서울 밤도깨비 야시장 2017,여의도 한강공원', '메시', '2017-9-6', 120, 102, 1,
+'goblin3.jpg', 'goblin2.jpg','goblin3.jpg' ,'' ,'','http:--blog.naver.com/qwqw9043/221089732157',
+'지난주 주말, 동주언니랑 여의도 한강공원가서 오랜만에 자전거도 타고 자전거 대여하는곳 근처에
+서울 밤도깨비 야시장(여의동 한강공원)도 있길래 저녁 해결할겸 여의도 한강공원 밤도깨비 야시장에 다녀왔어요' ); 
+
+insert into board values(
+46, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan4.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:--blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
+
+insert into board values(
+47, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han4.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+insert into board values(
+48, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river4.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
+
+insert into board values(
+49, '서울 신사동 가로수길맛집 새우가 맛있는', '메시', '2017-7-7', 66, 2, 1,
+'garosu4.jpg','garosu2.jpg','garosu3.jpg','garosu4.jpg','','http:--blog.naver.com/kami0413/221111319835',
+'안녕하세요 로웰입니다. 오늘은 서울나들이를 다녀왔을때 들렀던가로수길맛집 볼리포인트 후기를 쓰러왔습니다 '); 
+
+insert into board values(
+50, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
+'Namsan5.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:--blog.naver.com/ssoya3399/221117668557',
+'이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+정말 짱짱이었어요 >_< ' ); 
+
+insert into board values(
+51, '서울야경 즐기기', '데헤아', '2016-11-15', 11, 35, 1,
+'Han5.jpg', 'Han2.jpg','Han3.jpg','Han4.jpg','Han5.jpg','http:--sinbaram76.blog.me/221115008018',
+'드래곤스카이입니다. 연휴의 마지막을 그냥 보내기 아쉬워 한강에서 유람선 탔습니다' ); 
+
+insert into board values(
+52, '서울 청계천 서울로 7017 강아지가능', '에레라', '2017-10-10', 20, 44, 1,
+'river5.jpg', 'river2.jpg','river3.jpg','river4.jpg','river5.jpg','http:--blog.naver.com/lowell__93/221114098442',
+'오늘은 추석연휴 가볼만한곳으로 청계천 서울로 7017을 보여드릴꼐요!!' ); 
 
 --댓글 테이블
 create table comment(

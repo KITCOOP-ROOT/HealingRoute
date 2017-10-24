@@ -3,5 +3,6 @@ package com.root.healing.model;
 import java.util.List;
 
 public interface BoardInter {
-	List<BoardDto> readBoardAll();
+	public List<BoardDto> readBoardAll();
+	public List<BoardDto> readBoard(int start, int size);
 }

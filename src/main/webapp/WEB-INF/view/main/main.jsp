@@ -14,7 +14,7 @@
 </head>
 <body>
 	<!-- Header -->  
-	<header id="header">
+ 	<header id="header">
 		<div class="inner">
 			<div class="content">
 				<h1>Radius</h1>
@@ -25,27 +25,17 @@
 			</div>
 			<a href="#" class="button hidden"><span>Let's Go</span></a>
 		</div>
-	</header>
+	</header>  
 	<!-- main1(지도) -->  
 
 	<!-- main2(board)-->  
 	<div id="main">
 		<div class="inner">
-			<div class="columns">
-				<c:forEach var="b" items="${board}">	
+			<div class="columns"  id="columns">
+				<c:forEach var="b" items="${board}" begin="0" end="20">	
 				<div class="image fit">
 					<a href="#">
 				      	<img src="./resources/image/board/${b.b_image1}" alt="">
-      				</a>
-				</div>
-				<div class="image fit">
-					<a href="#">
-				      	<img src="./resources/image/board/${b.b_image2}" alt="">
-      				</a>
-				</div>
-				<div class="image fit">
-					<a href="#">
-				      	<img src="./resources/image/board/${b.b_image3}" alt="">
       				</a>
 				</div>
 				</c:forEach>
@@ -75,6 +65,6 @@
 				&copy; KICCampus 2017.
 			</div>
 		</div>
-	</footer>
+	</footer> 
 </body>
 </html>
