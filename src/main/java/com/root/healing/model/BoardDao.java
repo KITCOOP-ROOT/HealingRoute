@@ -1,6 +1,5 @@
 package com.root.healing.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +27,9 @@ public class BoardDao implements BoardInter{
 			return null; 
 		}
 	}
+	
+	public List<BoardDto> readBoardByNickName(String nickName) {
+		return mapper.selectBoardByNickName(nickName);
+	}
+	
 }

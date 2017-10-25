@@ -25,20 +25,22 @@ b_nickname varchar(20) references family(f_nickname),
 b_date date default(now()),
 b_point int default(0),
 b_recommend int default(0),
-b_locnum int references location(l_num),
+b_mnum int references map(m_num),
 b_image1 varchar(20) default('board.jpg'),
 b_image2 varchar(20),
 b_image3 varchar(20),
 b_image4 varchar(20),
 b_image5 varchar(20), 
 b_link varchar(100),
-b_content varchar(4000)
+b_con tent varchar(4000)
 );
 
 insert into board values(
 1, '서울 남산타워 케이블카 타고 서울야경 한눈에 보기!', '포그바', '2017-10-15', 5, 22, 1,
 'Namsan1.jpg','Namsan2.jpg','Namsan3.jpg','Namsan4.jpg','Namsan5.jpg','http:---------blog.naver.com/ssoya3399/221117668557',
 '이번에 남산타워 케이블카 타고 서울야경 한눈에 보고 왔는데요
+
+
 정말 짱짱이었어요 >_< ' ); 
 
 insert into board values(

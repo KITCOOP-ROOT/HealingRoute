@@ -12,12 +12,10 @@
 <div class="div">
 <c:import url="top.jsp"/>
 --메인--
-<a href="showBoard">힐링보드 테스트</a>
-<a href="list">ss</a>
 <table>
 	<tr>
-		<td><a href="showBoard">ss</a></td>
-		<td><a href="list">ss</a></td>
+		<td><a href="showBoard">BoardTest</a></td>
+		<td><a href="showMypage?nickName=포그바">MyPageTest</a></td>
 		<td><a href="list">ss</a></td>
 		<td><a href="list">ss</a></td>
 	</tr>
