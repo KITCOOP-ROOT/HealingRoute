@@ -16,7 +16,7 @@
 <a href="list">ss</a>
 <table>
 	<tr>
-		<td><a href="showBoard">ss</a></td>
+		<td><a href="showIntro">인트로</a></td>
 		<td><a href="list">ss</a></td>
 		<td><a href="list">ss</a></td>
 		<td><a href="list">ss</a></td>
