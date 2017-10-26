@@ -2,6 +2,7 @@ package com.root.healing.model;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 
 public interface BoardMapper {
@@ -9,4 +10,23 @@ public interface BoardMapper {
 			+ "b_image1, b_image2, b_image3, b_image4, b_image5, b_link, b_content "
 			+ "from board order by b_date desc")  // 최신 일자로 정렬 
 	List<BoardDto> selectBoardAll();	
+	
+	@Select("select * from board where b_num=#{b_num}")
+	BoardDto selectData(String b_num);
+	
+	//새글 작성
+	@Insert("<script>insert into <choose>" 
+	        + "<when test=\"b_image1 != null\"> "
+	        	+ "board(b_title,b_nickname,b_point,b_image1,b_image2,b_image3,b_image4,b_image5,b_content) "
+	        	+ "values(#{b_title},#{b_nickname},#{b_point},#{b_image1},#{b_image2},#{b_image3},#{b_image4},#{b_image5},#{b_content}) "
+	        + "</when><otherwise>"
+        		+ "board(b_title,b_nickname,b_content,b_point) "
+        		+ "values(#{b_title},#{b_nickname},#{b_content},#{b_point}) "
+			+ "</otherwise></choose></script>")
+	int insertBoard(BoardDto dto);
+	
+	
+	
+	
+	
 }
