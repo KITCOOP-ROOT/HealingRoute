@@ -32,4 +32,21 @@ public class BoardDao implements BoardInter{
 		return mapper.selectBoardByNickName(nickName);
 	}
 	
+	public boolean writeBoard(BoardDto dto) {
+		boolean b = false;
+		try {
+			int re= mapper.insertBoard(dto);
+			if(re>0)
+			b = true;
+		} catch (Exception e) {
+			System.out.println("insertData err :" + e);
+			b= false;
+		}
+		return b;
+	}
+	
+	public BoardDto selectdata(String b_num) {
+		return mapper.selectData(b_num);
+	}
+	
 }
