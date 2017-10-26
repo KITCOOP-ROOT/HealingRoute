@@ -38,7 +38,6 @@
 	</header> -->
 	<!-- main1(지도) -->  
 	<div class= "main-map">
-		<c:import url="test.jsp" />
 		<c:import url="map.jsp" />
 	</div>
 	<!-- main2(board)-->  
@@ -47,8 +46,8 @@
 			<div class="columns"  id="columns">
 				<c:forEach var="b" items="${board}" begin="0" end="20">	
 				<div class="image fit">
-					<a href="#">
-				      	<img src="./resources/image/board/${b.b_image1}" alt="">
+					<a href="showDetail?boardNum=${b.b_num}">
+				      	<img src="./resources/image/board/${b.b_image1}" alt="loading...">
       				</a>
 				</div>
 				</c:forEach>

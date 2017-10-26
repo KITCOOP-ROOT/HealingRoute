@@ -1,0 +1,56 @@
+@CHARSET "UTF-8";
+
+#mypage_frontContent {
+	colum-width: 100% 
+}
+
+#mypage_mainContent {
+	colum-width: 100% 
+}
+
+
+#mypage_mainContent {
+	column-width: 350px;
+	column-gap: 15px;
+}
+
+#mypage_mainContent figure {
+	display: inline-block;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	margin: 0;
+	margin-bottom: 15px;
+	padding: 10px;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);;
+}
+
+#mypage_mainContent figure img {
+	width: 100%;
+}
+
+#mypage_mainContent figure figcaption {
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	padding: 10px;
+	margin-top: 11px;
+}
+
+.mypage_container {
+	margin-left:0px; 
+	margin-right:0px; 
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.mypage_container .mypage_Content .mypage_header {
+	padding-left: 50px;
+	padding-right: 50px;
+	overflow: hidden;
+}
+
+.mypage_header {
+	marign-top : 500px; 
+	maring-bottom : 500px; 
+	text-align: center;
+}
+}

@@ -174,3 +174,10 @@ table {
 
 }
 
+/* Top 고정 */ 
+.fixed {
+	position: fixed; 
+	height: 75px; 
+	width: 100%; 
+	z-index:1000; 
+}

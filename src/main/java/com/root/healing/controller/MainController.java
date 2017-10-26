@@ -14,7 +14,7 @@ import com.root.healing.model.BoardInter;
 
 @Controller
 public class MainController {
-	@Autowired
+/*	@Autowired
 	@Qualifier("boardDao")
 	private BoardInter inter;
 	
@@ -24,4 +24,5 @@ public class MainController {
 		List<BoardDto> blist = inter.readBoardAll();
 		return new ModelAndView("main/main","board", blist);
 	}
+	*/
 }

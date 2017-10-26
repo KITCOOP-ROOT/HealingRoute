@@ -71,13 +71,13 @@
 			var count = 0, size = 5;
 			var windowSize = $window.height(); 
 			$window.scroll(function() {
-				if(count === 1000) return; 
-				if ($window.scrollTop() > $(document).height() - windowSize) {
+				if(count === 1000) return;  
+				if ($window.scrollTop() + 100 > ($(document).height() - windowSize)) {
 					count = count + 1; 
-					//console.log("******count = " + count); 
-					//console.log("scrolTop = " + $(window).scrollTop());
-					//console.log("documentHeight = " + $(document).height());
-					//console.log("windowSize = " + windowSize);			
+//					console.log("******count = " + count); 
+//					console.log("scrolTop = " + $(window).scrollTop());
+//					console.log("documentHeight = " + $(document).height());
+//					console.log("windowSize = " + windowSize);			
 					$.ajax({
 						type : "post",
 						url : "showBoard",
