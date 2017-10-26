@@ -1,11 +1,4 @@
-/*
-	Radius by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
-
 (function($) {
-
 	skel.breakpoints({
 		xlarge:	'(max-width: 1680px)',
 		large:	'(max-width: 1280px)',
@@ -15,17 +8,17 @@
 	});
 
 	$(function() {
-
 		var	$window = $(window),
 			$body = $('body'),
 			$header = $('#header'),
 			$footer = $('#footer');
-
+ 
 		// Disable animations/transitions until the page has loaded.
 			$body.addClass('is-loading');
 
 			$window.on('load', function() {
 				window.setTimeout(function() {
+					
 					$body.removeClass('is-loading');
 				}, 100);
 			});
@@ -48,7 +41,7 @@
 					button 	= t.find('.button');
 
 				button.click(function(e) {
-
+					
 					t.toggleClass('hide');
 					if ( t.hasClass('preview') ) {
 						return true;
@@ -73,7 +66,37 @@
 				});
 
 			});
-
+			
+		// Main Scroll 
+			var count = 0, size = 5;
+			var windowSize = $window.height(); 
+			$window.scroll(function() {
+				if(count === 1000) return;  
+				if ($window.scrollTop() + 100 > ($(document).height() - windowSize)) {
+					count = count + 1; 
+//					console.log("******count = " + count); 
+//					console.log("scrolTop = " + $(window).scrollTop());
+//					console.log("documentHeight = " + $(document).height());
+//					console.log("windowSize = " + windowSize);			
+					$.ajax({
+						type : "post",
+						url : "showBoard",
+						dataType : "json",
+						data:{"start":count*size , "size":size},
+						success : function(scrollDatas){
+							var str = ""; 	
+							$(scrollDatas.datas).each(function(index, objArr){ 
+								str += "<div class='image fit'><a href='#'><img src='./resources/image/board/" + objArr["b_image1"] + "' alt='loading...'></a></div>"; 
+							});			
+							$("#columns").append(str);
+						},
+						error : function(){
+							count = 1000; 
+							//$("#columns").text("에러 !");
+						}
+					}); 
+				}
+			}); 
 	});
-
+	
 })(jQuery);

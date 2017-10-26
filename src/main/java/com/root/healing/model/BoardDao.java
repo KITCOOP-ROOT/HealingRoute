@@ -15,4 +15,21 @@ public class BoardDao implements BoardInter{
 	public List<BoardDto> readBoardAll() {
 		return mapper.selectBoardAll();
 	}
+	
+	public List<BoardDto> readBoard(int start, int size) {
+		List<BoardDto> buff = mapper.selectBoardAll(); 
+		
+		if(buff.size() > start + size) { 
+			return buff.subList(start, start+size);
+		} else if(buff.size() >= start){ 
+			return buff.subList(start, buff.size()); 
+		} else {
+			return null; 
+		}
+	}
+	
+	public List<BoardDto> readBoardByNickName(String nickName) {
+		return mapper.selectBoardByNickName(nickName);
+	}
+	
 }

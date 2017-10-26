@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -12,9 +11,15 @@
 <body>
 <div class="div">
 <c:import url="top.jsp"/>
---메인--
-<a href="showBoard">힐링보드 테스트</a>
-<a href="list">ss</a>
+<table>
+	<tr>
+		<td><a href="showIntro">인트로</a></td>
+		<td><a href="showBoard">BoardTest</a></td>
+		<td><a href="showMypage?nickName=포그바">MyPageTest</a></td>
+		<td><a href="list">ss</a></td>
+		<td><a href="list">ss</a></td>
+	</tr>
+</table>
 </div>
 </body>
 </html>
