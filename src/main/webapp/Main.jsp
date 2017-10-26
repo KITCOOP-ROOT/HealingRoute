@@ -14,6 +14,7 @@
 --메인--
 <table>
 	<tr>
+		<td><a href="showIntro">인트로</a></td>
 		<td><a href="showBoard">BoardTest</a></td>
 		<td><a href="showMypage?nickName=포그바">MyPageTest</a></td>
 		<td><a href="list">ss</a></td>
