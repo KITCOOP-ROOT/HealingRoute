@@ -9,4 +9,6 @@ public interface BoardInter {
 	//새글쓰기
 	public boolean writeBoard(BoardDto dto);
 	public BoardDto selectdata(String b_num); 
+	//Map
+	public List<BoardDto> readMap();
 }

@@ -21,14 +21,13 @@ public class ShowIntroController {
 	@Qualifier("locationDao")
 	private LocationInter inter;
 	
-	@RequestMapping(value=("showIntro"), method=RequestMethod.GET)
+	@RequestMapping("intro")
 	public ModelAndView getContList(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView view = new ModelAndView();
 		
 		List<LocationDto> contList = inter.contList();
 		view.setViewName("intro/intro");
 		view.addObject("contList", contList);
-
 		return view;
 
 	}
