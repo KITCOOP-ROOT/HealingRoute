@@ -54,7 +54,7 @@ public class BoardController {
 			data.put("b_date", dto.getB_date());
 			data.put("b_point", dto.getB_point());
 			data.put("b_recommend", dto.getB_recommend());
-			data.put("b_locnum", dto.getB_locnum());
+			data.put("b_mnum", dto.getB_mnum());
 			data.put("b_image1", dto.getB_image1());
 			data.put("b_image2", dto.getB_image2());
 			data.put("b_image3", dto.getB_image3());

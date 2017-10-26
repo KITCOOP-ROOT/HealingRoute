@@ -1,7 +1,7 @@
 package com.root.healing.model;
 
 public class BoardDto {
-	private String b_num, b_title, b_nickname, b_date, b_point, b_recommend, b_locnum; 
+	private String b_num, b_title, b_nickname, b_date, b_point, b_recommend, b_mnum; 
 	private String b_image1, b_image2, b_image3, b_image4, b_image5; 
 	private String b_link, b_content;
 	public String getB_num() {
@@ -40,11 +40,11 @@ public class BoardDto {
 	public void setB_recommend(String b_recommend) {
 		this.b_recommend = b_recommend;
 	}
-	public String getB_locnum() {
-		return b_locnum;
+	public String getB_mnum() {
+		return b_mnum;
 	}
-	public void setB_locnum(String b_locnum) {
-		this.b_locnum = b_locnum;
+	public void setB_mnum(String b_mnum) {
+		this.b_mnum = b_mnum;
 	}
 	public String getB_image1() {
 		return b_image1;
@@ -92,7 +92,7 @@ public class BoardDto {
 	@Override
 	public String toString() {
 		return "BoardDto [b_num=" + b_num + ", b_title=" + b_title + ", b_nickname=" + b_nickname + ", b_date=" + b_date
-				+ ", b_point=" + b_point + ", b_recommend=" + b_recommend + ", b_locnum=" + b_locnum + ", b_image1="
+				+ ", b_point=" + b_point + ", b_recommend=" + b_recommend + ", b_mnum=" + b_mnum + ", b_image1="
 				+ b_image1 + ", b_image2=" + b_image2 + ", b_image3=" + b_image3 + ", b_image4=" + b_image4
 				+ ", b_image5=" + b_image5 + ", b_link=" + b_link + ", b_content=" + b_content + "]";
 	}
