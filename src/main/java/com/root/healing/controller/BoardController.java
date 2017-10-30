@@ -34,7 +34,6 @@ public class BoardController {
 	@RequestMapping(value="showBoard", method=RequestMethod.GET)
 	public ModelAndView showHealingBoard(@RequestParam(value="start", defaultValue="0")int start, @RequestParam(value="size", defaultValue="20")int size) {
 		List<BoardDto> blist = inter.readBoard(start, size);
-		//System.out.println(list.toString());
 		return new ModelAndView("main/main","board", blist);
 	}
 	

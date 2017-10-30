@@ -49,8 +49,8 @@ public class BoardDao implements BoardInter{
 		return mapper.selectData(b_num);
 	}
 	
-	public List<BoardDto> readMap() {
-		List<BoardDto> dto = mapper.selectBoardAll();
+	public List<MapXmlDto> readMap() {
+		List<MapXmlDto> dto = mapper.readmap();
 		return dto ;
 	}
 	

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%
 	String memid = (String) session.getAttribute("idKey");
 	String gradeKey = (String) session.getAttribute("gradeKey");
@@ -11,7 +10,7 @@
 	String mem4 = "";
 
 	if (memid == null) {
-		log = "<a href='/web_project/member/member_login.jsp'>로그인 /  </a><a href='/web_project/member/member_register.jsp'>회원가입</a>";
+		log = "<a href='/web_project/member/member_login.jsp'>로그인</a>  /  <a href='/web_project/member/member_register.jsp'>회원가입</a>";
 	} else {
 		if (gradeKey != null && gradeKey.equals("admin")) {
 			//admin 로그인 시 관리자 메뉴 보이기
@@ -30,68 +29,43 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script src="./resources/js/script_member.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script> 
-<link rel="stylesheet" type="text/css" href="./resources/css/paper_bootstrap.css">
+<script	src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<link rel="stylesheet" type="text/css"	href="./resources/css/paper_bootstrap.css">
 <link rel="stylesheet" type="text/css" href="./resources/css/style.css">
 
 </head>
 <body>
-	<div class="div">
-		<nav class="navbar navbar-default">
-			<table>
+<div class="top-menu-div">
+<nav class="navbar navbar-default">
+	<div class="top-logo">
+		<a href="/"><img src="./resources/image/logo_small.png"	class="logo"></a>
+	</div>
+	<div class="collapse navbar-collapse top-search" id="bs-example-navbar-collapse-1">
+		<div class="form-group">
+			<form class="navbar-form navbar-center" role="search" name="frm" id="searchFrom">
+			<table class="100">
 				<tr>
-					<td class="top_menu_left">
-						<!-- 로고 부분 -->
-						<div class="navbar-header">
-							<a href="#"><img src="./resources/image/logo_small.png" class="apple"></a>
-						</div>
+					<td>
+						<input type="text"  class="form-control form-text"  placeholder="도시명을 입력하세요..." autocomplete="off" name="cityName"
+						id="cityName" size="400" onkeydown="searchAddr()">
 					</td>
-					<td style="text-align: right;">
-						<div class="collapse navbar-collapse 100 ">
-							<div class="form-group 100 navbar-collapse">
-									<table class="100">
-										<tr>
-											<td>
-										
-											<!-- 검색기능 부분 -->
-											<form class="navbar-form navbar-left 100" role="search" >
-											<input type="text" class="form-control input"
-												placeholder="Search" size="90%" name="search"> <!-- <button type="submit" class="btn btn-default">검색</button> -->
-											</form>
-											</td>
-											<!-- 로그인/회원가입 부분 -->
-											<td nowrap>
-											<div id="member">
-												<span><%=log%></span>&nbsp; 
-												<span><%=mem1%></span>
-											</div>
-											</td>
-										</tr>
-									</table>
-							</div>
-						</div>
-					</td>
-					<td class="right">
-						<!-- 메뉴바 부분 -->
-						<div class="jaybar-bar">
-						<button type="button" class="navbar-toggle collapsed"
-							data-toggle="collapse"
-							data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span> 
-							<span class="icon-bar"></span> 
-							<span class="icon-bar"></span>
-						</button>
-						</div>
+					<td nowrap>
+					
 					</td>
 				</tr>
 			</table>
-		</nav>
+			<div class="top-login">
+				<span><%=log%></span>&nbsp; <span><%=mem1%></span>
+			</div>
+			</form>
+		</div>
 	</div>
-	<br>
-	<br>
-	<br>
-	<br>
-
+		<button type="button" class="navbar-toggle collapsed"
+			data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+				class="icon-bar"></span>
+		</button>
+	</nav>
+</div>
 </body>
 </html>
