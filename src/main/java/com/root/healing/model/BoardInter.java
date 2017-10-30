@@ -10,5 +10,5 @@ public interface BoardInter {
 	public boolean writeBoard(BoardDto dto);
 	public BoardDto selectdata(String b_num); 
 	//Map
-	public List<BoardDto> readMap();
+	public List<MapXmlDto> readMap();
 }

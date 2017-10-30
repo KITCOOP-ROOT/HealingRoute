@@ -4,6 +4,7 @@ public class BoardDto {
 	private String b_num, b_title, b_nickname, b_date, b_point, b_recommend, b_mnum; 
 	private String b_image1, b_image2, b_image3, b_image4, b_image5; 
 	private String b_link, b_content;
+	
 	public String getB_num() {
 		return b_num;
 	}

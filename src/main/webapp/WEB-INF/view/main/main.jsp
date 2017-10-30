@@ -40,9 +40,10 @@
 			<div class="columns" id="columns">
 				<c:forEach var="b" items="${board}" begin="0" end="20">
 					<div class="image fit">
-						<a href="showDetail?boardNum=${b.b_num}"> <img
-							src="./resources/image/board/${b.b_image1}" alt="loading...">
-						</a>
+						<a href="showDetail?boardNum=${b.b_num}"> 
+						<img src="./resources/image/board/${b.b_image1}" alt="loading..." 
+								 onmouseover="javascript:over('${b.m_lat}','${b.m_lng})" >
+						</a><br>
 					</div>
 				</c:forEach>
 			</div>

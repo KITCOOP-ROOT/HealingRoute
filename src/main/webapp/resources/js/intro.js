@@ -30,7 +30,7 @@ function searchAddr() {
 //							str += "<br>";
 							 									
 							if(index == 0 || index % 3 == 0) str += "<tr>";
-							str += "<td><a href='#' onclick='selectData(\"" + objArr["l_city"] + ", " + objArr["l_nation"] + ", " + objArr["l_continent"] + "\"); return false;'>" + objArr["l_city"] + ", " + objArr["l_nation"] + ", " + objArr["l_continent"] + "</a>&nbsp;&nbsp;</td>";
+							str += "<td nowrap><a href='#' onclick='selectData(\"" + objArr["l_city"] + ", " + objArr["l_nation"] + ", " + objArr["l_continent"] + "\"); return false;'>" + objArr["l_city"] + ", " + objArr["l_nation"] + ", " + objArr["l_continent"] + "</a>&nbsp;&nbsp;</td>";
 							if((index+1) % 3 == 0) str += "</tr>";
 							
 						});
@@ -62,11 +62,11 @@ function searchNation(continent) {
 		data : {"nation" : continent},
 		dataType : "json",
 		success : function(nationDatas) {
-			var str = "<table><tr>";
+			var str = "<table class='intro-table'><tr>";
 			var list = nationDatas.datas;
 
 			$(list).each(function(index, objArr) {
-				str += "<td><a href='#' onclick='searchCity(\"" + objArr["l_nation"] + "\"); return false;'>" + objArr["l_nation"] + "</a>&nbsp;&nbsp;&nbsp;</td>";
+				str += "<td nowrap><a href='#' onclick='searchCity(\"" + objArr["l_nation"] + "\"); return false;'>" + objArr["l_nation"] + "</a>&nbsp;&nbsp;&nbsp;</td>";
 			});
 			
 			str += "</tr></table>";
@@ -93,7 +93,7 @@ function searchCity(nation) {
 			var list = cityDatas.datas;
 			
 			$(list).each(function(index, objArr) {
-				str += "<td><a href='#' onclick='selectData(\"" + objArr["l_city"] + ", " + objArr["l_nation"] + ", " + objArr["l_continent"] + "\"); return false;'>" + objArr["l_city"] + "</a>&nbsp;&nbsp;&nbsp;</td>";
+				str += "<td nowrap><a href='#' onclick='selectData(\"" + objArr["l_city"] + ", " + objArr["l_nation"] + ", " + objArr["l_continent"] + "\"); return false;'>" + objArr["l_city"] + "</a>&nbsp;&nbsp;&nbsp;</td>";
 			});
 			
 			str += "</tr></table>";
@@ -179,11 +179,17 @@ function readCookie(cName) {
     var temp = cData.split(', ');
     
     for(var i = temp.length-1; i >= 0; i--){
-	   cLink += "<a href='#' onclick='selectData(\"" + temp[i] + "\"); return false;'>" + temp[i] + "</a> "
+    	if(cData.length != 0) {
+    		cLink += "<span class=\"label label-primary\">" +
+    				 " <a href='#' onclick='selectData(\"" + temp[i] + "\"); return false;'> " + temp[i] + " </a></span> &nbsp;&nbsp;&nbsp;";
+    	}else{
+    		cLink ='';
+    	}
+    	
 	}
 
     $("#searchRecord").html(cLink);
-    return cData;
+    return cData ;
 }
 
 // 선택된 도시명을 검색창에 출력

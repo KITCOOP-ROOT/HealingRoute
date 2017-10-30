@@ -31,5 +31,9 @@
 		<property name="mapperInterface" value="com.root.healing.model.LocationMapper" />
 		<property name="sqlSessionFactory" ref="sqlSessionFactoryBean" />
 	</bean>
+	<bean id="mapMapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="mapperInterface" value="com.root.healing.model.MapMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactoryBean" />
+	</bean>
 	
 </beans>

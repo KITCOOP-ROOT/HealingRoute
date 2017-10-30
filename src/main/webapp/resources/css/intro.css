@@ -1,7 +1,5 @@
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-    
     .header {hegiht: 450px; width:200px;}
-
     .row.content {height: 750px}
 
 /* background */
@@ -78,7 +76,7 @@ div{
 
 #searchRecord {
 	margin-top : 60px; 
-	text-decoration: underline;
+	text-decoration: none;
 }
 
 #cityName, #searchRecord {
@@ -141,4 +139,3 @@ input{
     @media screen and (max-width: 767px) {
       .row.content {height:auto;} 
     }
-    

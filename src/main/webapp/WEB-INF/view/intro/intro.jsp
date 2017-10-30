@@ -28,24 +28,21 @@
 					<img src="./resources/image/logo_big.png" class="alpha logo-div">
 				</div>
 				<!-- cookie -->
-				<div id="searchRecord"></div>
+				<div id="searchRecord"> </div>
 				<!-- 검색 영역 -->
 				<div class="search-bar">
 				<form class="navbar-form navbar-center" role="search" name="frm" id="searchFrom">
-					<input type="text" class="form-control input " 
-						placeholder="도시명을 입력하세요...       " autocomplete="off"
-						name="cityName" id="cityName" size="auto" onkeydown="searchAddr()"> <input
-						type="button" class="btn btn-default" onclick="check()"
-						value="O K">
+					<input type="text" class="form-control input "  placeholder="도시명을 입력하세요... " autocomplete="off"
+						name="cityName" id="cityName" size="auto" onkeydown="searchAddr()">
+					<input type="button" class="btn btn-default" onclick="check()" value="O K">
 				</form>
 				</div>
 				<div id="resultList"></div>
 				<div id="categoryArea">
 				<table>
 					<tr>
-						<c:forEach var="c" items="${contList }">
-							<td><a href="#"
-								onclick="searchNation('${c.l_continent }'); return false;">${c.l_continent }</a>&nbsp;&nbsp;&nbsp;</td>
+						<c:forEach var="c" items="${contList}">
+							<td nowrap><a href="#" onclick="searchNation('${c.l_continent }'); return false;">${c.l_continent }</a>&nbsp;&nbsp;&nbsp;</td>
 						</c:forEach>
 					</tr>
 				</table>
