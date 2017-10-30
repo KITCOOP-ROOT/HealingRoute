@@ -12,12 +12,11 @@ public class BoardDao implements BoardInter{
 	@Qualifier("boardMapper")
 	private BoardMapper mapper;
 	
-	public List<BoardDto> readBoardAll() {
-		return mapper.selectBoardAll();
+	public List<BoardDto> readBoard() {
+		return mapper.selectBoard();
 	}
-	
 	public List<BoardDto> readBoard(int start, int size) {
-		List<BoardDto> buff = mapper.selectBoardAll(); 
+		List<BoardDto> buff = mapper.selectBoard(); 
 		
 		if(buff.size() > start + size) { 
 			return buff.subList(start, start+size);
