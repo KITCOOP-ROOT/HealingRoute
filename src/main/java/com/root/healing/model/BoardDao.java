@@ -54,4 +54,7 @@ public class BoardDao implements BoardInter{
 		return dto ;
 	}
 	
+	public BoardDto readDetailData(String boardNum) {
+		return mapper.selectDetailData(boardNum);
+	}
 }

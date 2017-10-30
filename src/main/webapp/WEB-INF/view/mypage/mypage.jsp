@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="fixed">
-<c:import url="/top.jsp"></c:import>
+<c:import url="/WEB-INF/view/main/top.jsp"></c:import>
 </div>
 <br><br><br><br>
 <div class="mypage_container" id="mypage_main">

@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="div">
-<c:import url="top.jsp"/>
+<%-- <c:import url="/WEB-INF/view/main/top.jsp"/> --%>
 <table>
 	<tr>
 		<td><a href="showIntro">인트로</a></td>

@@ -26,4 +26,6 @@ public interface BoardMapper {
 			+ "</otherwise></choose></script>")
 	int insertBoard(BoardDto dto);
 	
+	@Select("select * from board inner join map on b_mnum=m_num where b_num=#{boardNum}") // 선택 데이터 출력
+	BoardDto selectDetailData(String boardNum);
 }

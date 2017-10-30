@@ -11,4 +11,5 @@ public interface BoardInter {
 	public BoardDto selectdata(String b_num); 
 	//Map
 	public List<BoardDto> readMap();
+	public BoardDto readDetailData(String boardNum);
 }
