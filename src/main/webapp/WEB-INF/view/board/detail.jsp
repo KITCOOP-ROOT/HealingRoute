@@ -10,16 +10,21 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<link rel="stylesheet" type="text/css" href="./resources/engine1/style.css" />
-<script type="text/javascript" src="./resources/engine1/jquery.js"></script>
-<link href="./resources/detail/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="./resources/css/styleDetail.css" />
+<script type="text/javascript" src="./resources/js/jqueryDetail.js"></script>
+<link href="./resources/css/bootstrapDetail.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
-<link href="./resources/detail/css/business-casual.css" rel="stylesheet">
+<link href="./resources/css/business-casual.css" rel="stylesheet">
 
 <title>Detail</title>
 </head>
 <body>
+<!-- main top(고정) -->
+<div class = "top-menu-div">
+	<c:import url="../main/top.jsp" />
+</div>
+<br><br><br>
 <div class="container">
 	<div class="i_date text-lg text-muted">${detail.b_date }</div>
 
@@ -67,7 +72,7 @@
 			<h1 class="my-2">${detail.b_title }</h1>
 			<hr class="divider2" align="right">
 			<div class="i_addr text-muted"><a href="${detail.b_link }" target="_blank">${detail.b_link }</a></div>
-			<div class="recommend text-muted text-lg"><img src="./resources/image/board/h.png" width="20px" height="20px"><br> 
+			<div class="recommend text-muted text-lg"><img src="./resources/image/h.png" width="20px" height="20px"><br> 
 				<strong>${detail.b_recommend }</strong>
 			</div>
 	</div>
@@ -83,7 +88,7 @@
 </div>
 
 <!-- Bootstrap core JavaScript -->
-<script src="./resources/detail/jquery/jquery.min.js"></script>
-<script src="./resources/detail/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./resources/js/jquery.min.js"></script>
+<script src="./resources/js/bootstrap.bundle.js"></script>
 </body>
 </html>

@@ -55,6 +55,7 @@
 				</tr>
 			</table>
 			<div class="top-login">
+				<span><a href="showMypage?nickName=메시">마이페이지</a></span><br>
 				<span><%=log%></span>&nbsp; <span><%=mem1%></span>
 			</div>
 			</form>

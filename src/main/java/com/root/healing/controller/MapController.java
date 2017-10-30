@@ -17,7 +17,7 @@ public class MapController {
 	@Autowired
 	@Qualifier("boardDao")
 	private BoardInter inter;
-	
+/*	
 	@RequestMapping("map.xml")
 	@ResponseBody
 	public String allMapRead() {
@@ -41,4 +41,5 @@ public class MapController {
 		mapXml += "</markers>";
 		return mapXml ;
 	}
+*/
 }

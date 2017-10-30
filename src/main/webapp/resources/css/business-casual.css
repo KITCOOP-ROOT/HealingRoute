@@ -23,7 +23,7 @@ h1, h2, h3, h4, h5, h6, .text-heading, .i_addr {
 }
 
 .i_addr{
-	font-size: 1rem;
+	font-size: 1.5 rem;
 	text-align: right!important;
 }
 
