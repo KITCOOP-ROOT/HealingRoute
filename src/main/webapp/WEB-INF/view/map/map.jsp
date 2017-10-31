@@ -7,9 +7,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCQjHp-XiLQiHLHI-2lk8gZGPqM4V13l0&callback=initMap"></script>
 <script>
-/* $(document).ready(function(){
-	initMap();
-}); */
 function initMap(){
 	var map = new google.maps.Map(document.getElementById('map'), {
         center: new google.maps.LatLng(37.525623, 126.936158),
@@ -71,22 +68,16 @@ function initMap(){
 	});
 }
 
-
 function downloadUrl(url, callback) {
 	var request = window.ActiveXObject ? new ActiveXObject(
 			'Microsoft.XMLHTTP') : new XMLHttpRequest;
-
 	request.onreadystatechange = function() {
 		if (request.readyState == 4) {
-			request.onreadystatechange = doNothing;
 			callback(request, request.status);
 		}
 	};
 	request.open('GET', url, true);
 	request.send(null);
-}
-
-function doNothing() {
 }
 	
 	

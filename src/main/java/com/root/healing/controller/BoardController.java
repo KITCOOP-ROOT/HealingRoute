@@ -35,16 +35,21 @@ public class BoardController {
 	@Qualifier("boardDao")
 	private BoardInter inter;
 	
+	@Autowired
+	private MapController mcont;
+	
 	@RequestMapping(value="showBoard", method=RequestMethod.GET)
 	public ModelAndView showHealingBoard(@RequestParam(value="start", defaultValue="0")int start, @RequestParam(value="size", defaultValue="20")int size) {
+		mcont.searchCityMap();
 		List<BoardDto> blist = inter.readBoard(start, size);
-		//System.out.println(list.toString());
 		return new ModelAndView("main/main","board", blist);
 	}
 	
 	@RequestMapping(value="showBoard", method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> scrollHealingBoard(@RequestParam("start")int start, @RequestParam("size")int size) {
+
+		mcont.searchCityMap();
 		Map<String, Object> scrollDatas = new HashMap<String, Object>();
 		List<Map<String, String>> datas = new ArrayList<Map<String,String>>();
 

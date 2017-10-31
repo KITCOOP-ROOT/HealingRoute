@@ -3,6 +3,19 @@
  *	template Bootstrap
  */
 
+/* 디테일페이지 맵 div 디자인 */
+#map-detail {
+ height: 500px;
+ width: 1110px;
+ margin: auto;
+ padding: 10px;
+ border: 0px;
+ border-radius: 35px;
+ -moz-border-radius: 15px;
+ -webkit-border-radius: 15px;
+ -o-border-radius: 15px;
+}
+       
 @font-face {
   font-family: 'ws-ctrl-bootstrap';
   src: url('ws-ctrl-bootstrap.eot');

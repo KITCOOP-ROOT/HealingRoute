@@ -9,21 +9,47 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-
+<title>여행장소 상세보기</title>
 <link rel="stylesheet" type="text/css" href="./resources/css/styleDetail.css" />
 <script type="text/javascript" src="./resources/js/jqueryDetail.js"></script>
-<link href="./resources/css/bootstrapDetail.min.css" rel="stylesheet">
+
+  <link href="./resources/css/bootstrapDetail.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
 <link href="./resources/css/business-casual.css" rel="stylesheet">
+<script src="./resources/js/jquery.min.js"></script>
+<script src="./resources/js/bootstrap.bundle.js"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCQjHp-XiLQiHLHI-2lk8gZGPqM4V13l0&callback=initMap"></script>
+<script type="text/javascript">
+function initMap() {
+	La =  Number($("#l_lat").val());
+	Ln =  Number($("#l_lng").val());
+	MapLoad(La,Ln);
+}
+function MapLoad(La,Ln) {
+	var pinicon  = './resources/image/pin.png';
 
-<title>Detail</title>
+ 	var map = new google.maps.Map(document.getElementById('map-detail'), { 
+			center: new google.maps.LatLng(La,Ln),
+			zoom: 15
+		});
+	var marker = new google.maps.Marker({
+		position: new google.maps.LatLng(La,Ln),
+		map: map,
+		icon: pinicon
+	});
+}
+</script>
+
+
 </head>
 <body>
 <!-- main top(고정) -->
 <div class = "top-menu-div">
 	<c:import url="../main/top.jsp" />
 </div>
+<input type="hidden" value=" ${detail.m_lat}" id="l_lat">
+<input type="hidden" value=" ${detail.m_lng}" id="l_lng">
 <br><br><br>
 <div class="container">
 	<div class="i_date text-lg text-muted">${detail.b_date }</div>
@@ -54,7 +80,6 @@
 				<img class="d-block img-fluid w-100" src="./resources/image/board/${detail.b_image5}" width="800" height="600" alt="">
             </div>
 		</div>
-			
 			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 				<span class="sr-only">Previous</span>
@@ -83,12 +108,9 @@
         	</h2>
         	<hr class="divider">
         	<p>${detail.b_content }</p>
-        	<p></p>
+        	<br><br>
+        	<div id="map-detail"></div>
 		</div>
 </div>
-
-<!-- Bootstrap core JavaScript -->
-<script src="./resources/js/jquery.min.js"></script>
-<script src="./resources/js/bootstrap.bundle.js"></script>
 </body>
 </html>

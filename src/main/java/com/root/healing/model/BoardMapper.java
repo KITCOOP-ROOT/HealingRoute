@@ -16,7 +16,7 @@ public interface BoardMapper {
 	@Select("select * from board where b_nickname=#{nickName} order by b_date desc, b_num asc")  // 최신 일자로 정렬 
 	List<BoardDto> selectBoardByNickName(String nickName);	
 	
-	@Select("select * from board where b_num=#{b_num}")
+	@Select("select * from board inner join location on b_mnum=l_num inner join map on m_loc=l_num where b_num=#{b_num}")
 	BoardDto selectData(String b_num);
 	
 	//새글 작성
