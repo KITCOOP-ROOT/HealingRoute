@@ -2,17 +2,21 @@ package com.root.healing.controller;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +27,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.root.healing.model.BoardDto;
 import com.root.healing.model.BoardInter;
+import com.root.healing.model.UploadFileDto;
 
 @Controller
 public class BoardController {
@@ -30,21 +35,16 @@ public class BoardController {
 	@Qualifier("boardDao")
 	private BoardInter inter;
 	
-	@Autowired
-	private MapController mcont;
-	
 	@RequestMapping(value="showBoard", method=RequestMethod.GET)
 	public ModelAndView showHealingBoard(@RequestParam(value="start", defaultValue="0")int start, @RequestParam(value="size", defaultValue="20")int size) {
-		mcont.searchCityMap();
 		List<BoardDto> blist = inter.readBoard(start, size);
+		//System.out.println(list.toString());
 		return new ModelAndView("main/main","board", blist);
 	}
 	
 	@RequestMapping(value="showBoard", method=RequestMethod.POST)
 	@ResponseBody
 	public Map<String, Object> scrollHealingBoard(@RequestParam("start")int start, @RequestParam("size")int size) {
-
-		mcont.searchCityMap();
 		Map<String, Object> scrollDatas = new HashMap<String, Object>();
 		List<Map<String, String>> datas = new ArrayList<Map<String,String>>();
 
@@ -75,123 +75,72 @@ public class BoardController {
 	//새글입력
 	
 	@RequestMapping(value="write",method=RequestMethod.GET)
-	public String wirteaBoard() {
-		return "board/write";
+	public ModelAndView wirteaBoard(String b_num) {
+		BoardDto dto = inter.selectdata(b_num);
+		return new ModelAndView("board/write","write",dto);
 	}
 	
 	
 	@RequestMapping(value="write",method=RequestMethod.POST)
-	public String gogo(MultipartHttpServletRequest  request, BoardDto dto){	
-		// 1. file --> local folder
-		List<MultipartFile> files = request.getFiles("ufile");
-		// file이 없는 경우 종료
-		if (files == null) {
-			System.out.println("여기? ");
-			return "main/main";
-		}
-		// file 이름 받기 
-		String[] fileNames = new String[5]; 
-		fileNames[0] = dto.getB_image1();
-		fileNames[1] = dto.getB_image2();
-		fileNames[2] = dto.getB_image3();
-		fileNames[3] = dto.getB_image4();
-		fileNames[4] = dto.getB_image5();
-		// file 등록
-		for (int idx = 0; idx < files.size(); idx++) {
-			MultipartFile file = files.get(idx);
-			String fileName = fileNames[idx];
+	public String gogo(MultipartHttpServletRequest  mRequest, BoardDto dto,UploadFileDto updto){	
+		Iterator<String> iter = mRequest.getFileNames();
+		List<MultipartFile> files = new ArrayList<MultipartFile>();  
+		String fileName[] = {"","","","",""};
+		int FIdx = 0;
+		while(iter.hasNext()) {		
+			String uploadFileName = iter.next();
+			
+			MultipartFile file = mRequest.getFile(uploadFileName); 
+			files.add(file);
+			fileName[FIdx] = file.getOriginalFilename();	
+			if(fileName[FIdx] == null || fileName[FIdx].equals("")) continue;
+			FIdx++;
+			
+			
+			System.out.println("index:"+ (FIdx-1));
+			System.out.println("originalFileName: " +fileName[FIdx-1]);
+			System.out.println("file사이즈" + file.getSize());
 			
 			InputStream inputStream = null; 
 			OutputStream outputStream = null; 
-			try {
-				inputStream = file.getInputStream();
-				
-				File newFile = new File("C:/Users/kitcoop/git/HealingRoute/src/main/webapp/resources/image/board/" + fileName);
-				if(!newFile.exists()) newFile.createNewFile();
-				
-				outputStream = new FileOutputStream(newFile);
-				
-				int read = 0;
-				byte[] bytes = new byte[1024];
-				while((read = inputStream.read(bytes)) != -1) {
-					outputStream.write(bytes, 0, read);
-				}
-			} catch (Exception e) {
-				System.out.println("uploadOk err : " + e);
-			} finally {
+			
 				try {
-					if (outputStream != null) outputStream.close();
-					if (inputStream != null) inputStream.close();
-				} catch (Exception e2) {
-					e2.printStackTrace();
+					
+					inputStream = file.getInputStream();
+					
+					File newFile = new File("C:/Users/kitcoop/git/HealingRoute/src/main/webapp/resources/image/board/" + file.getOriginalFilename());
+					if(!newFile.exists()) newFile.createNewFile();
+					
+					outputStream = new FileOutputStream(newFile);
+					
+					int read = 0;
+					byte[] bytes = new byte[10720000];//Max : 1MB
+					while((read = inputStream.read(bytes)) != -1) {
+						outputStream.write(bytes, 0, read);
+					}
+					
+				} catch (Exception e) {
+					System.out.println("uploadOk err : " + e);
+				} finally {
+					try {
+						if (outputStream != null) outputStream.close();
+						if (inputStream != null) inputStream.close();
+					} catch (Exception e2) {
+						e2.printStackTrace();
+					}
 				}
 			}
-		}
-
+		
 		// 2. file name --> DB
+		dto.setB_image1(fileName[0]);
+		dto.setB_image2(fileName[1]);
+		dto.setB_image3(fileName[2]);
+		dto.setB_image4(fileName[3]);
+		dto.setB_image5(fileName[4]);
 		inter.writeBoard(dto);
 
 		return "main/main";
 	}
 	
-	//수정하기
-	@RequestMapping(value="update",method=RequestMethod.GET)
-	public String updateaBoard() {
-		return "board/update";
-	}
-	
-	
-	@RequestMapping(value="update",method=RequestMethod.POST)
-	public String writeupdate(MultipartHttpServletRequest  request, BoardDto dto){	
-		// 1. file --> local folder
-		List<MultipartFile> files = request.getFiles("ufile");
-		// file이 없는 경우 종료
-		if (files == null) {
-			System.out.println("여기? ");
-			return "main/main";
-		}
-		// file 이름 받기 
-		String[] fileNames = new String[5]; 
-		fileNames[0] = dto.getB_image1();
-		fileNames[1] = dto.getB_image2();
-		fileNames[2] = dto.getB_image3();
-		fileNames[3] = dto.getB_image4();
-		fileNames[4] = dto.getB_image5();
-		// file 등록
-		for (int idx = 0; idx < files.size(); idx++) {
-			MultipartFile file = files.get(idx);
-			String fileName = fileNames[idx];
-			
-			InputStream inputStream = null; 
-			OutputStream outputStream = null; 
-			try {
-				inputStream = file.getInputStream();
-				
-				File newFile = new File("C:/Users/kitcoop/git/HealingRoute/src/main/webapp/resources/image/board/" + fileName);
-				if(!newFile.exists()) newFile.createNewFile();
-				
-				outputStream = new FileOutputStream(newFile);
-				
-				int read = 0;
-				byte[] bytes = new byte[1024];
-				while((read = inputStream.read(bytes)) != -1) {
-					outputStream.write(bytes, 0, read);
-				}
-			} catch (Exception e) {
-				System.out.println("uploadOk err : " + e);
-			} finally {
-				try {
-					if (outputStream != null) outputStream.close();
-					if (inputStream != null) inputStream.close();
-				} catch (Exception e2) {
-					e2.printStackTrace();
-				}
-			}
-		}
-		
-		// 2. file name --> DB
-		inter.writeBoard(dto);
-		
-		return "main/update";
-	}
+
 }

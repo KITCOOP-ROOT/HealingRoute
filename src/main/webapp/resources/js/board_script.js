@@ -81,91 +81,70 @@ var img_html;
 var count =0;
 var index =0;//업로드 수량
 $(document).ready(function(){
-	$("#upfile").on("change", imageviews)
-	
+	//count ++;
+	$("#upfile1").on("change", { index : '1' }, imageviews);
+	$("#upfile2").on("change", { index : '2' }, imageviews);
+	$("#upfile3").on("change", { index : '3' }, imageviews);
+	$("#upfile4").on("change", { index : '4' }, imageviews);
+	$("#upfile5").on("change", { index : '5' }, imageviews);
 });
 
-
 function imageviews(e) {
-	//이미지 정보들을 초기화
-	//sel_files =[];
-	//$("#imageview").empty();
-
-	var files = e.target.files;
-	var filesArr = Array.prototype.slice.call(files)
-
-	filesArr.forEach(function(f){
+		var f= e.target.files[0];
+		
 		if(!f.type.match("image.*")){
 			alert("확장자는 이미지만 가능");
 			return;
 		}
-		sel_files.push(f);
+		//sel_files.push(f);
+		
+		var index = e.data.index; 
+		console.log("index!!!!!:" + index)
 		
 		var reader = new FileReader();
-		reader.onload = function(e){
-//			img_html ="<a href=\"javascript:void(0);\" onclick=\"deleteiamge("+index+")\" " + "id=\"img_id_"+index+"\">" +
-//							"<img src=\"" +e.target.result + "\" data-file='"+f.name+"'  " + "class='file_input_img_btn' title='Click to remove'>" + 
-//							"<div class='del'><input type=\"file\" name=\"ufile\" id=\"ufile\" class='file_hidden' /><input type=\"hidden\" name=\"fileNames\" id=\"fileNames\" value=\"" + f.name + "\"/></div></a>"; 
-			
-			img_html ="<a href=\"javascript:void(0);\" onclick=\"deleteiamge("+index+")\" " + "id=\"img_id_"+index+"\">" +
-			"<img src=\"" +e.target.result + "\" data-file='"+f.name+"'  " + "class='file_input_img_btn' title='Click to remove'>" + 
-			"<div class='del' style=\"display: inline;\"><input type=\"file\" name=\"ufile\" id=\"ufile\" class='file_hidden' /></div><input type=\"hidden\" name=\"b_image" + (count+1) + "\" value=\"" + f.name + "\"/></a>"; 
-			
-			index++;
-			count++; 
-			if(count <= 5){
-				$("#imageview").append(img_html);
-			}else{
-				count =5;
-				alert('더이상 추가할수없습니다');
-			}
+		reader.onload = function(e){ 
+			img_html ="<input type=\"hidden\" name=\"b_image" + (index) + "\" value=\"" + f.name + "\"/>" +
+						"<div class='file_input_div'><a href=\"#\" onclick='javascript:deleteiamge("+ index +")'>" +
+								"<img src='./resources/image/board/ex.jpg' id='del' class='file_input_img_del'/></a></div>"; 
+			$("#img"+index).attr("src", e.target.result);
+			$("#imageview").append(img_html);
 			
 		}
 		
 		reader.readAsDataURL(f);
 		
-	});
 }
 	//특정이미지 삭제
 function deleteiamge(index){
-	console.log("index:" + index);
-	sel_files.splice(index,1);
-	//input file,hidden값 초기화
-	var file = $("#fileNames").val();
-	console.log("파일명"+file);
-	$(file).empty();
-	var ufile = $("#ufile").val();
-	console.log("파일명"+ufile);
-	$(ufile).empty();
-	var img_id ="#img_id_" +index;
-	
-	$(img_id).remove();
-	
-	console.log(sel_files);
-	count--;
+	alert("삭제");
+	var file1 = $("#upfile1").val();
+	var file2 = $("#upfile2").val();
+	var file3 = $("#upfile3").val();
+	var file4 = $("#upfile4").val();
+	var file5 = $("#upfile5").val();
+	console.log("파일명"+file1);
+	console.log("파일명"+file2);
+	$(file1).empty();
+	$(file2).empty();
+	$(file3).empty(); 
+	$(file4).empty();
+	$(file5).empty();
+	$("#img" + index).attr('src', './resources/image/board/upphoto.png'); 
+	console.log($("#del").remove());
 }
-//글작성 체크란
-function writecheck(bfrm){
-	if(bfrm.b_title.value === ""){ 
-		alert("제목을 작성해주세요")
-		bfrm.b_title.focus();
-		return; 
-	}else if(bfrm.b_point.value === 0){ 
-		alert("별점을 눌러주세요")
-		bfrm.b_point.focus();
-		return; 
-	}
-}
+
+
+
 
 //글쓰기 작성 전송
 function gogo(){
-	if(bfrm.b_title.value === ""){ 
-		alert("제목을 작성해주세요")
-		bfrm.b_title.focus();
-		return; 
-	}else if(bfrm.b_point.value === ""){ 
+	if(bfrm.b_point.value === ""){ 
 		alert("별점을 눌러주세요")
 		bfrm.b_point.focus();
+		return; 
+	}else if(bfrm.b_title.value === ""){ 
+		alert("제목을 작성해주세요")
+		bfrm.b_title.focus();
 		return; 
 	}else{
 		bfrm.action = "write";	
@@ -174,6 +153,23 @@ function gogo(){
 	}
 	
 }
+//글 수정
+function update(){
+	if(bfrm.b_point.value === ""){ 
+		alert("별점을 눌러주세요")
+		bfrm.b_point.focus();
+		return; 
+	}else if(bfrm.b_title.value === ""){ 
+		alert("제목을 작성해주세요")
+		bfrm.b_title.focus();
+		return; 
+	}else{
+		bfrm.action = "update";	
+		bfrm.method="post";
+		bfrm.submit();
+	}
+}
+
 
 
 

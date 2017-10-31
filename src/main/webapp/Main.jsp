@@ -15,8 +15,8 @@
 	<tr>
 		<td><a href="showIntro">인트로</a></td>
 		<td><a href="showBoard">BoardTest</a></td>
-		<td><a href="showMypage?nickName=메시">MyPageTest</a></td>
-		<td><a href="write">새글작성</a></td>
+		<td><a href="sho.wMypage?nickName=메시">MyPageTest</a></td>
+		<td><a href="write?b_num=1">새글작성</a></td>
 		<td><a href="list">ss</a></td>
 	</tr>
 </table>
