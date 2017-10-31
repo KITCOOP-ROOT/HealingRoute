@@ -13,6 +13,9 @@
 <script type="text/javascript" src="./resources/js/board_script.js"></script>
 </head>
 <body>
+<div class="top-menu-div">
+	<c:import url="../main/top.jsp" />
+</div>
 <c:set var="b" value="${write}"/>
 <div class="divboard">
 <form action="write" method="post" enctype="multipart/form-data" name="bfrm" id="bfrm">

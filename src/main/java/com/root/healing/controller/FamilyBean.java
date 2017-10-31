@@ -1,6 +1,6 @@
-package com.root.healing.model;
+package com.root.healing.controller;
 
-public class FamilyDto {
+public class FamilyBean {
 	private String  f_nickname, f_email, f_pwd, f_grade;
 
 	public String getF_nickname() {
@@ -34,10 +34,6 @@ public class FamilyDto {
 	public void setF_grade(String f_grade) {
 		this.f_grade = f_grade;
 	}
-
-	@Override
-	public String toString() {
-		return "MemberdDto [f_nickname=" + f_nickname + ", f_email=" + f_email + ", f_pwd=" + f_pwd + ", f_grade="
-				+ f_grade + "]";
-	}
+	
+	
 }
