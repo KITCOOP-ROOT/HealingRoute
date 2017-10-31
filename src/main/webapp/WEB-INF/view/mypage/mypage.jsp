@@ -65,7 +65,7 @@
           <div class="mypage_content" id="mypage_mainContent">
           <figure>
 		    <div class="portfolio-item">         
-            <a class="portfolio-link" href="write">
+            <a class="portfolio-link" href="writeNew?nickname=${user}">
               <div class="portfolio-hover">
                 <div class="portfolio-hover-content">
                   <i class="fa fa-plus fa-3x"></i>

@@ -13,11 +13,11 @@
 <script type="text/javascript" src="./resources/js/board_script.js"></script>
 </head>
 <body>
-<c:set var="b" value="${write}"/>
+<c:set var="user" value="${user}"/>
 <div class = "top-menu-div">
 	<c:import url="../main/top.jsp" />
 </div>
-
+<br><br><br><br><br>
 <div class="divboard" >
 <form action="write" method="post" enctype="multipart/form-data" name="bfrm" id="bfrm">
 	<table  class="table table-striped table-hover ">
@@ -28,8 +28,7 @@
 	</tr>  
 	<tr class="active">
 		<td  class="top_menu_left">닉네임
-			<input type="hidden" name="b_nickname">
-			<input type="text" readonly="readonly" value="${b.b_nickname }">
+			<input type="text" name="b_nickname" readonly="readonly" value="${user}">
 		</td>
 			<td colspan="4">
 		<div id="rating" align=center class="starcss">

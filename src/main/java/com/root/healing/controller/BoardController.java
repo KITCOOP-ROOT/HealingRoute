@@ -74,10 +74,13 @@ public class BoardController {
 	}
 	//새글입력
 	
-	@RequestMapping(value="write",method=RequestMethod.GET)
-	public ModelAndView wirteaBoard(String b_num) {
-		BoardDto dto = inter.selectdata(b_num);
-		return new ModelAndView("board/write","write",dto);
+	@RequestMapping(value="writeNew",method=RequestMethod.GET)
+	public ModelAndView wirteaBoard(@RequestParam("nickname")String nickname) {
+		//BoardDto dto = inter.selectdata(b_num);
+		ModelAndView view = new ModelAndView("board/write");
+		System.out.println(nickname);
+		view.addObject("user", nickname);
+		return view; 
 	}
 	
 	
@@ -103,12 +106,11 @@ public class BoardController {
 			
 			InputStream inputStream = null; 
 			OutputStream outputStream = null; 
-			
+			String path = mRequest.getSession().getServletContext().getRealPath("resources/image/board/");
 				try {
 					
 					inputStream = file.getInputStream();
-					
-					File newFile = new File("C:/Users/kitcoop/git/HealingRoute/src/main/webapp/resources/image/board/" + file.getOriginalFilename());
+					File newFile = new File(path + file.getOriginalFilename());
 					if(!newFile.exists()) newFile.createNewFile();
 					
 					outputStream = new FileOutputStream(newFile);
