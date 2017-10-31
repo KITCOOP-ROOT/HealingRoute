@@ -95,20 +95,21 @@ function imageviews(e) {
 		if(!f.type.match("image.*")){
 			alert("확장자는 이미지만 가능");
 			return;
-		}
+		} 
 		//sel_files.push(f);
 		
 		var index = e.data.index; 
 		console.log("index!!!!!:" + index)
 		
 		var reader = new FileReader();
+		
 		reader.onload = function(e){ 
-			img_html ="<input type=\"hidden\" name=\"b_image" + (index) + "\" value=\"" + f.name + "\"/>" +
-						"<div class='file_input_div'><a href=\"#\" onclick='javascript:deleteiamge("+ index +")'>" +
-								"<img src='./resources/image/board/ex.jpg' id='del' class='file_input_img_del'/></a></div>"; 
+			$("#del"+index).remove(); 
+			img_html ="<input type=\"hidden\" name=\"b_image" + (index) + "\" value=\"" + f.name + "\"/>"+
+					  "<div class='file_input_div' id='del"+index+"'><a href=\"#\" onclick='javascript:deleteiamge("+ index +")'>" +
+					  "<img src='./resources/image/board/x.png' class='file_input_img_del'/></a></div>"; 
 			$("#img"+index).attr("src", e.target.result);
-			$("#imageview").append(img_html);
-			
+			$("#imageview" + index).append(img_html);
 		}
 		
 		reader.readAsDataURL(f);
@@ -117,20 +118,9 @@ function imageviews(e) {
 	//특정이미지 삭제
 function deleteiamge(index){
 	alert("삭제");
-	var file1 = $("#upfile1").val();
-	var file2 = $("#upfile2").val();
-	var file3 = $("#upfile3").val();
-	var file4 = $("#upfile4").val();
-	var file5 = $("#upfile5").val();
-	console.log("파일명"+file1);
-	console.log("파일명"+file2);
-	$(file1).empty();
-	$(file2).empty();
-	$(file3).empty(); 
-	$(file4).empty();
-	$(file5).empty();
+	$("#upfile" + index).val(null);    
 	$("#img" + index).attr('src', './resources/image/board/upphoto.png'); 
-	console.log($("#del").remove());
+	console.log($("#del"+index).remove());
 }
 
 
