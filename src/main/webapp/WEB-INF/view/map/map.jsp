@@ -5,16 +5,21 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<%
+String xmlpath = request.getSession().getServletContext().getRealPath("resources/map.xml");
+%>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCCQjHp-XiLQiHLHI-2lk8gZGPqM4V13l0&callback=initMap"></script>
 <script>
 function initMap(){
+
 	var map = new google.maps.Map(document.getElementById('map'), {
         center: new google.maps.LatLng(37.525623, 126.936158),
         zoom: 12 });
 	
     var infoWindow = new google.maps.InfoWindow;
-      
-	downloadUrl('http://localhost/root/resources/map.xml', function(data) {
+
+//	downloadUrl('http://192.168.0.27/root/resources/map.xml', function(data) {
+	downloadUrl('/resources/map.xml', function(data) {
 				var xml = data.responseXML;
 				var markers = xml.documentElement.getElementsByTagName('marker');
 				Array.prototype.forEach.call(markers, function(markerElem) {

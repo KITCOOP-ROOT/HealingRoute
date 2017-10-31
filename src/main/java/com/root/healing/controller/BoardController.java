@@ -13,6 +13,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.StringTokenizer;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -39,23 +42,26 @@ public class BoardController {
 	private MapController mcont;
 	
 	@RequestMapping(value="showBoard", method=RequestMethod.GET)
-	public ModelAndView showHealingBoard(@RequestParam(value="start", defaultValue="0")int start, @RequestParam(value="size", defaultValue="20")int size) {
-		mcont.searchCityMap();
+	public ModelAndView showHealingBoard(HttpServletRequest request, HttpServletResponse response, @RequestParam(value="start", defaultValue="0")int start, @RequestParam(value="size", defaultValue="20")int size) {
+		
 		List<BoardDto> blist = inter.readBoard(start, size);
+		mcont.searchCityMap(request, response);
+		
 		return new ModelAndView("main/main","board", blist);
 	}
 	
 	@RequestMapping(value="showBoard", method=RequestMethod.POST)
 	@ResponseBody
-	public Map<String, Object> scrollHealingBoard(@RequestParam("start")int start, @RequestParam("size")int size) {
+	public Map<String, Object> scrollHealingBoard(HttpServletRequest request, HttpServletResponse response, @RequestParam("start")int start, @RequestParam("size")int size) {
 
-		mcont.searchCityMap();
+		mcont.searchCityMap(request, response);
 		Map<String, Object> scrollDatas = new HashMap<String, Object>();
 		List<Map<String, String>> datas = new ArrayList<Map<String,String>>();
 
 		List<BoardDto> blist = inter.readBoard(start, size);
 		if(blist == null) return null; 
 		for(BoardDto dto : blist) {
+
 			Map<String, String> data = new HashMap<String, String>();
 			data.put("b_num", dto.getB_num());
 			data.put("b_title", dto.getB_title());
@@ -146,7 +152,7 @@ public class BoardController {
 		dto.setB_image5(fileName[4]);
 		inter.writeBoard(dto);
 
-		return "main/main";
+		return "redirect:/showBoard";
 	}
 	
 

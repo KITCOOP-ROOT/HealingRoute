@@ -64,7 +64,7 @@ $(document).ready(function(){
 				</tr>
 			</table>
 			<div class="top-login">
-				<span><%=log%>&nbsp;&nbsp;/ &nbsp;&nbsp;<a href="showMypage?nickName=메시">마이페이지</a></span>
+				<span><%=log%>&nbsp;&nbsp;/ &nbsp;&nbsp;<a href="showMypage?nickName=포그바">마이페이지</a></span>
 				<span></span>
 			</div>
 			</form>

@@ -87,7 +87,7 @@
               <img class="img-fluid" src="./resources/image/board/${my.b_image1}" alt="">
             </a>
             <div class="portfolio-caption">
-              <h4>${my.b_title}</h4>
+              <p style="font-size: 1.5em;"><b>${my.b_title}</b></p>
               <p class="text-muted">좋아요(${my.b_recommend})</p>
             </div>
           </div>

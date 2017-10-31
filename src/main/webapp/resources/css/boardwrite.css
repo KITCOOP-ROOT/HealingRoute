@@ -5,7 +5,7 @@ th, tr, td{
 	text-align: center;
 }
 
-table {
+.table {
 	width: 60%;
 	height:100px;
 	margin: auto;
@@ -94,3 +94,16 @@ opacity:0; filter: alpha(opacity=0); -ms-filter: alpha(opacity=0); cursor:pointe
 
 /*별점 css*/
 .starcss{size: 100%}
+
+.top-menu-div {
+	align: center;
+	position: fixed; 
+	height: 80px; 
+	width: 100%; 
+	z-index:10; 
+}	
+
+.mid-center{
+	text-align: center;
+	vertical-align: middle;
+}

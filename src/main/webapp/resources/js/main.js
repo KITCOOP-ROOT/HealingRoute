@@ -68,7 +68,7 @@
 			});
 			
 		// Main Scroll 
-			var count = 0, size = 5;
+			var count = 4, size = 5;
 			var windowSize = $window.height(); 
 			$window.scroll(function() {
 				if(count === 1000) return;  
@@ -87,7 +87,7 @@
 							var str = ""; 	
 							$(scrollDatas.datas).each(function(index, objArr){ 
 								str += "<div class='image fit'><a href='#'>" ;
-								str += "<img src='./resources/image/board/" + objArr["b_image1"] + "' onmouseover=\"javascript:over('${b.m_lat}','${b.m_lng})\">" ;
+								str += "<img src='./resources/image/board/" + objArr["b_image1"] + "'\">" ;
 								str += "</a></div>"; 
 							});			
 							$("#columns").append(str);

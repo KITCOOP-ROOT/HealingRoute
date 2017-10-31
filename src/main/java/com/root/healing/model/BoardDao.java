@@ -16,7 +16,7 @@ public class BoardDao implements BoardInter{
 		return mapper.selectBoard();
 	}
 	public List<BoardDto> readBoard(int start, int size) {
-		List<BoardDto> buff = mapper.selectBoard(); 
+		List<BoardDto> buff = mapper.selectBoardAll(); 
 		
 		if(buff.size() > start + size) { 
 			return buff.subList(start, start+size);

@@ -102,11 +102,11 @@ $(document).ready(function(){
           <form role="form" name="loginform">
             <div class="form-group" style="text-align:left">
               <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> UserEmail</label>
-              <input type="text" class="form-control" id="f_email" name="f_email" placeholder="Enter email" >
+              <input type="text" class="form-control" id="f_email" name="f_email" placeholder="Enter email" style="color: #000;">
             </div>
             <div class="form-group" style="text-align:left">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="password" class="form-control" id="f_pwd" name="f_pwd" placeholder="Enter password">
+              <input type="password" class="form-control" id="f_pwd" name="f_pwd" placeholder="Enter password"  style="color: #000;">
             </div>
             <div class="checkbox" style="text-align:left">
               <label><input type="checkbox" value="" checked>Remember me</label>
@@ -137,15 +137,15 @@ $(document).ready(function(){
         <form role="form" name="loginfrm" id="loginfrm">
         	<div class="form-group" style="text-align:left">
               <label for="nickname"><span class="glyphicon glyphicon-user"></span> UserNickName</label>
-              <input type="text" class="form-control" id="f_nickname" name="f_nickname" placeholder="Enter nickname" required>
+              <input type="text" class="form-control" id="f_nickname" name="f_nickname" placeholder="Enter nickname" required  style="color: #000;">
             </div>
             <div class="form-group" style="text-align:left">
               <label for="usrname"><span class="glyphicon glyphicon-envelope"></span> UserEmail</label>
-              <input type="text" class="form-control" id="f_email" name="f_email" placeholder="Enter email" required>
+              <input type="text" class="form-control" id="f_email" name="f_email" placeholder="Enter email" required  style="color: #000;">
             </div>
             <div class="form-group" style="text-align:left">
               <label for="psw"><span class="glyphicon glyphicon-eye-open"></span> Password</label>
-              <input type="password" class="form-control" id="f_pwd" name="f_pwd" placeholder="Enter password" required>
+              <input type="password" class="form-control" id="f_pwd" name="f_pwd" placeholder="Enter password" required  style="color: #000;">
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="" checked>Remember me</label>
@@ -160,18 +160,13 @@ $(document).ready(function(){
       </div>     
     </div>
   </div> 
-
-
-
 	<!-- 반투명 배경 -->
 	<div class="covervid-wrapper bg_effect"></div>
 
 	<!-- 동영상배경영역 -->
 	<div class="movie-div">
-		<video id="video" preload="auto" autoplay="true" loop="loop"
-			muted="muted" volume="0">
-			<source src="./resources/image/kauai_vid_1.mp4">
-		</video>
+		<video id="video" preload="auto" autoplay="true" loop="loop" muted="muted" volume="0">
+		<source src="./resources/image/kauai_vid_1.mp4"></video>
 	</div>
 	<!-- 동영상배경영역 end -->
 </body>

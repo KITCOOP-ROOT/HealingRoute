@@ -13,19 +13,6 @@
 <title>힐링루트 지도검색 결과</title>
 </head>
 <body>
-	<!-- Header -->
-<!-- 	<header id="header">
-		<div class="inner">
-			<div class="content">
-				<h1>제목</h1>
-				<h2>
-					여기에 검색창 넣어야 하나? 넣지말자<br />
-				</h2>
-				<a href="#" class="button big alt"><span>Let's Go</span></a>
-			</div>
-			<a href="#" class="button hidden"><span>Let's Go</span></a>
-		</div>
-	</header> -->
 	<!-- main top(고정) -->
 	<div class = "top-menu-div">
 		<c:import url="top.jsp" />
@@ -41,37 +28,13 @@
 				<c:forEach var="b" items="${board}" begin="0" end="20">
 					<div class="image fit">
 						<a href="showDetail?boardNum=${b.b_num}"> 
-						<img src="./resources/image/board/${b.b_image1}" alt="loading..." 
-								 onmouseover="javascript:over('${b.m_lat}','${b.m_lng})" >
+						<img src="./resources/image/board/${b.b_image1}" alt="loading..." >
 						</a><br>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
 	</div>
-	<!-- Footer -->
-<!-- 	<footer id="footer">
-		<a href="#" class="info fa fa-info-circle"><span>About</span></a>
-		<div class="inner">
-			<div class="content">
-				<h3>Healing Route for you</h3>
-				<p>Search a beautiful city where you can be healed.</p>
-			</div>
-			<div class="copyright">
-				<h3>Follow me</h3>
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span
-							class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-facebook"><span
-							class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon fa-instagram"><span
-							class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-dribbble"><span
-							class="label">Dribbble</span></a></li>
-				</ul>
-				&copy; KIC Campus 2017.
-			</div>
-		</div>
-	</footer> -->
+
 </body>
 </html>

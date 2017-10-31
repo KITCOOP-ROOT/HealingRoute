@@ -56,13 +56,13 @@ public class FamilyLogController {
 	@RequestMapping(value="login",method=RequestMethod.POST)
 	public String main(){		
 
-		return "main/main";	//매핑값 써주세요
+		return "redirect:/intro";	//매핑값 써주세요
 	}
 	
 	@RequestMapping("logout")
 	public String Logout(HttpSession session){
 		session.invalidate();
 		System.out.println("로그아웃성공");
-		return "intro/intro"; 
+		return "redirect:/intro"; 
 	}	
 }

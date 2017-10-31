@@ -3,6 +3,8 @@ package com.root.healing.controller;
 import java.io.File;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -27,7 +29,7 @@ public class MapController {
 	private BoardInter binter;
 	
 	@ResponseBody
-	public void searchCityMap() {
+	public void searchCityMap(HttpServletRequest request, HttpServletResponse response) {
 		// 맵 리스트 출력용
 		List<MapXmlDto> maplist = binter.readMap();
 		try {
@@ -78,7 +80,9 @@ public class MapController {
 			Transformer transformer = transformerFactory.newTransformer();
 			DOMSource source = new DOMSource(doc);
 			System.out.println(source);
-			StreamResult result = new StreamResult(new File("C:/project_git/HealingRoute/src/main/webapp/resources/map.xml"));
+			String filepath = request.getSession().getServletContext().getRealPath("resources/map.xml");
+			System.out.println(filepath);
+			StreamResult result = new StreamResult(new File(filepath));
 			transformer.transform(source, result);
 			StreamResult consoleResult = new StreamResult(System.out);
 			transformer.transform(source, consoleResult);

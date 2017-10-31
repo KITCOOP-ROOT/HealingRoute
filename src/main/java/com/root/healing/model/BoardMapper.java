@@ -8,6 +8,9 @@ import org.apache.ibatis.annotations.Select;
 public interface BoardMapper {
 	@Select("select * from board inner join location on b_mnum=l_num inner join map on m_loc=l_num  order by b_date desc")  // 최신 일자로 정렬 
 	List<BoardDto> selectBoard();
+	
+	@Select("select * from board order by b_date desc")  // 최신 일자로 정렬 
+	List<BoardDto> selectBoardAll();
 
 	@Select("select m_lat, m_lng, m_addr, l_city, b_nickname,b_num,b_point from board inner join map on b_mnum = m_num " + 
 			" inner join location on m_loc=l_num order by b_num desc")  // 최신 일자로 정렬 
