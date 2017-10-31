@@ -13,13 +13,19 @@
 <script type="text/javascript" src="./resources/js/board_script.js"></script>
 </head>
 <body>
-<div class="top-menu-div">
+<c:set var="b" value="${write}"/>
+<div class = "top-menu-div">
 	<c:import url="../main/top.jsp" />
 </div>
-<c:set var="b" value="${write}"/>
-<div class="divboard">
+
+<div class="divboard" >
 <form action="write" method="post" enctype="multipart/form-data" name="bfrm" id="bfrm">
 	<table  class="table table-striped table-hover ">
+	<tr class="active">
+		<td colspan="4">제목
+			<input type="text" name="b_title" size="100">
+		</td>
+	</tr>  
 	<tr class="active">
 		<td  class="top_menu_left">닉네임
 			<input type="hidden" name="b_nickname">
@@ -39,32 +45,26 @@
 		<input type="hidden" name="b_point">
 		</td> 
 	</tr> 
-		<tr class="active">
-		<td>제목</td>
-		<td colspan="4">
-			<input type="text" name="b_title">
-		</td>
-	</tr>  
 	<tr>   
-		<td colspan="4" nowrap height="160">
+		<td colspan="4">
 			<div class="file_input_div"> 
-				<div id="imageview" class="file_input_div">
+				<div id="imageview1" class="file_input_div">
 					<img src="./resources/image/board/upphoto.png" class="file_input_img_btn" id="img1"/>
 					<input type="file" name="upfile1" id="upfile1"  multiple="multiple" class="file_input_hidden"/>
 				</div>
-				<div id="imageview" class="file_input_div">
+				<div id="imageview2" class="file_input_div">
 					<img src="./resources/image/board/upphoto.png" class="file_input_img_btn" id="img2"/>
 					<input type="file" name="upfile2" id="upfile2" multiple="multiple" class="file_input_hidden"/>
 				</div>
-				<div id="imageview" class="file_input_div">
+				<div id="imageview3" class="file_input_div">
 					<img src="./resources/image/board/upphoto.png" class="file_input_img_btn" id="img3" />
 					<input type="file" name="upfile3" id="upfile3" multiple="multiple" class="file_input_hidden" />
 				</div>
-				<div id="imageview" class="file_input_div">
+				<div id="imageview4" class="file_input_div">
 					<img src="./resources/image/board/upphoto.png" class="file_input_img_btn" id="img4"/>
 					<input type="file" name="upfile4" id="upfile4" multiple="multiple" class="file_input_hidden" />
 				</div>
-				<div id="imageview" class="file_input_div">
+				<div id="imageview5" class="file_input_div">
 					<img src="./resources/image/board/upphoto.png" class="file_input_img_btn" id="img5"/>
 					<input type="file" name="upfile5" id="upfile5" multiple="multiple" class="file_input_hidden"/>
 				</div>
@@ -72,7 +72,7 @@
 
 		</td>
 	</tr>
-
+			
 	<tr class="active">
 		<td colspan="4">
 			<textarea rows="10" style="width: 100%; resize: none;"  name="b_content"></textarea>
